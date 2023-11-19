@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const Chart = require('chart.js/auto');
 
 function readConfig() {
   const configPath = 'reportconfig.json';
@@ -20,7 +21,7 @@ function generateHTMLReport(result, config) {
   const totalDuration = result.totalDuration / 1000; // convert milliseconds to seconds
   const totalPass = result.totalPassed || 0;
   const totalFail = result.totalFailed || 0;
-  const totalSkipped = result.totalSkipped || 0;
+  const totalSkipped = result.totalPending || 0;
   const totalTests = result.totalTests || 0;
 
   const menubarContent = `
@@ -36,6 +37,8 @@ function generateHTMLReport(result, config) {
       </div>
     </div>
   `;
+
+  const chartCanvas = `<canvas id="testChart" width="400" height="400"></canvas>`;
 
   const reportContent = `
     <!DOCTYPE html>
@@ -54,12 +57,18 @@ function generateHTMLReport(result, config) {
         .failed {
           color: red;
         }
+        .skipped {
+          color: #FFD580;
+        }
       </style>
       <title>${config.title}</title>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
     <body>
       ${menubarContent}
-      <div class="container mt-3 text-center"></div>
+      <div class="container mt-3 text-center">
+      ${chartCanvas}
+    </div>
       <div class="container mt-3">
         <table class="table mt-3">
           <thead>
@@ -75,6 +84,32 @@ function generateHTMLReport(result, config) {
           </tbody>
         </table>
       </div>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          // Call a function to draw the pie chart
+          drawPieChart(${totalPass}, ${totalFail}, ${totalSkipped});
+        });
+
+        function drawPieChart(pass, fail, skipped) {
+          var ctx = document.getElementById('testChart').getContext('2d');
+          var myPieChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+              labels: ['Pass', 'Fail', 'Skipped'],
+              datasets: [{
+                data: [pass, fail, skipped],
+                backgroundColor: ['#86af49', '#eca1a6', '#ffef96'], // Customize colors if needed
+              }]
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+            }
+          });
+        }
+      </script>
+
     </body>
     </html>
   `;
@@ -85,15 +120,22 @@ function generateHTMLReport(result, config) {
 function generateRows(runs) {
   let passedTests = '';
   let failedTests = '';
+  let skippedTests = '';
 
   for (const run of runs) {
     for (const test of run.tests) {
       const isFailed = test.state === 'failed';
+      const isSkipped = test.state === 'pending';
+      const isPassed = test.state === 'passed';
       const rowColor = isFailed ? 'style="background-color: #ffcccc;"' : '';
-      const statusClass = isFailed ? 'failed' : 'passed';
-
-      const attempts = test.attempts || [];
-      const lastAttempt = attempts[attempts.length - 1] || {};
+      let statusClass
+      if(isFailed){
+        statusClass = "failed"
+      }else if(isSkipped){
+        statusClass = "skipped"
+      }else if(isPassed){
+        statusClass = "passed"
+      }
 
       // Extract just the first line of the error and append error file info
       let displayError = run.tests[0]?.displayError || 'Pass';
@@ -101,6 +143,13 @@ function generateRows(runs) {
       const errorFile = run.tests[0]?.displayError ?
         getErrorFileInfo(run.tests[0]?.displayError) : "";
       displayError = displayError + `\n ${errorFile}`;
+
+      //If the status is pending update display text
+      if(test.state === 'pending'){
+        displayError = "Skipped"
+      }else{
+        //Test is not skipped
+      }
 
       const duration =run.stats.duration/1000;
 
@@ -128,8 +177,10 @@ function generateRows(runs) {
 
       if (isFailed) {
         failedTests += row;
-      } else {
+      } else if (isPassed) {
         passedTests += row;
+      } else if (isSkipped) {
+        skippedTests += row;
       }
     }
   }
@@ -141,7 +192,7 @@ function generateRows(runs) {
     return match ? match[1] : null;
     }
 
-  return `${failedTests}${passedTests}`;
+    return `${failedTests}${passedTests}${skippedTests}`;
 }
 
 module.exports = (on, config) => {
