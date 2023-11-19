@@ -1,0 +1,92 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "address": {
+        "street": "123 Main Street",
+        "city": "San Francisco",
+        "state": "CA",
+        "zip": "94105"
+      },
+      "phone_numbers": [
+        {
+          "type": "home",
+          "number": "(123) 456-7890"
+        },
+        {
+          "type": "mobile",
+          "number": "(987) 654-3210"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Jane Doe",
+      "email": "jane.doe@example.com",
+      "address": {
+        "street": "456 Elm Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10013"
+      },
+      "phone_numbers": [
+        {
+          "type": "home",
+          "number": "(212) 555-1212"
+        },
+        {
+          "type": "work",
+          "number": "(646) 555-5555"
+        }
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "iPhone 13 Pro",
+      "price": 999,
+      "categories": [
+        "Electronics",
+        "Smartphones"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "MacBook Pro 14",
+      "price": 1999,
+      "categories": [
+        "Electronics",
+        "Laptops"
+      ]
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "products": [
+        {
+          "product_id": 1,
+          "quantity": 1
+        },
+        {
+          "product_id": 2,
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "user_id": 2,
+      "products": [
+        {
+          "product_id": 2,
+          "quantity": 1
+        }
+      ]
+    }
+  ]
+}

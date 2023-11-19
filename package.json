@@ -1,0 +1,19 @@
+{
+  "name": "cypress_ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open --e2e --browser chrome"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "cypress": "^13.5.0",
+    "ts-node": "^10.9.1"
+  }
+}

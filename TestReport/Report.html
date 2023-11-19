@@ -1,0 +1,109 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <style>
+        th, td {
+          text-align: center;
+        }
+        .passed {
+          color: green;
+        }
+        .failed {
+          color: red;
+        }
+      </style>
+      <title>Test Automation Report</title>
+    </head>
+    <body>
+      
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <img src="https://user-images.githubusercontent.com/2801156/153322291-8b186487-5127-48f7-aa6d-b0ef350f8575.png" alt="Logo" class="mr-2" style="height: 30px;">
+      <span class="navbar-brand mb-0 h1">Test Automation Report</span>
+    </nav>
+    <div class="container mt-3">
+      <div class="navbar-text" style="font-size: smaller; color: #888;">
+        Time: 11/18/2023, 11:36:24 PM | Duration: 60.498 seconds |
+        Passed: 3 | Failed: 4 | Skipped: 0 |
+        Total Tests: 7
+      </div>
+    </div>
+  
+      <div class="container mt-3 text-center"></div>
+      <div class="container mt-3">
+        <table class="table mt-3">
+          <thead>
+            <tr>
+              <th style="width: 20%;">Test</th>
+              <th style="width: 30%;">Result</th>
+              <th style="width: 20%;">Screenshot/Video</th>
+              <th style="width: 15%;">Duration</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+        <tr style="background-color: #ffcccc;">
+          <td style="width: 20%; text-align: left;">Billing Page Tests - Verify the billing methods</td>
+          <td style="width: 30%; text-align: left;" class="failed">AssertionError: Timed out retrying after 10ms: Expected to find content: 'Non Existent' but never did.
+ webpack://cypress_ts/./cypress/e2e/Billing.cy.ts:4:51)</td>
+          <td style="width: 20%; text-align: center;"><a href="file:///Users/garu/Downloads/Cypress_TS/cypress/videos/Billing.cy.ts.mp4" target="_blank">Video</a> / <a href="file:///Users/garu/Downloads/Cypress_TS/cypress/screenshots/Billing.cy.ts/Billing Page Tests -- Verify the billing methods (failed).png" target="_blank">Screenshot</a></td>
+          <td style="width: 15%;">13.798</td>
+        </tr>
+      
+        <tr style="background-color: #ffcccc;">
+          <td style="width: 20%; text-align: left;">Landing Page Tests - Verify the landing page elements</td>
+          <td style="width: 30%; text-align: left;" class="failed">AssertionError: Timed out retrying after 10ms: Expected to find content: 'Non Existent' but never did.
+ webpack://cypress_ts/./cypress/e2e/Landing.cy.ts:4:51)</td>
+          <td style="width: 20%; text-align: center;"><a href="file:///Users/garu/Downloads/Cypress_TS/cypress/videos/Landing.cy.ts.mp4" target="_blank">Video</a> / <a href="file:///Users/garu/Downloads/Cypress_TS/cypress/screenshots/Landing.cy.ts/Landing Page Tests -- Verify the landing page elements (failed).png" target="_blank">Screenshot</a></td>
+          <td style="width: 15%;">9.24</td>
+        </tr>
+      
+        <tr style="background-color: #ffcccc;">
+          <td style="width: 20%; text-align: left;">Login Tests - Verify the login tests</td>
+          <td style="width: 30%; text-align: left;" class="failed">AssertionError: Timed out retrying after 10ms: Expected to find content: 'Non Existent' but never did.
+ webpack://cypress_ts/./cypress/e2e/Login.cy.ts:4:51)</td>
+          <td style="width: 20%; text-align: center;"><a href="file:///Users/garu/Downloads/Cypress_TS/cypress/videos/Login.cy.ts.mp4" target="_blank">Video</a> / <a href="file:///Users/garu/Downloads/Cypress_TS/cypress/screenshots/Login.cy.ts/Login Tests -- Verify the login tests (failed).png" target="_blank">Screenshot</a></td>
+          <td style="width: 15%;">9.508</td>
+        </tr>
+      
+        <tr style="background-color: #ffcccc;">
+          <td style="width: 20%; text-align: left;">Transaction Tests - Verify the transactions</td>
+          <td style="width: 30%; text-align: left;" class="failed">AssertionError: Timed out retrying after 10ms: Expected to find content: 'Non Existent' but never did.
+ webpack://cypress_ts/./cypress/e2e/Transactions.cy.ts:4:51)</td>
+          <td style="width: 20%; text-align: center;"><a href="file:///Users/garu/Downloads/Cypress_TS/cypress/videos/Transactions.cy.ts.mp4" target="_blank">Video</a> / <a href="file:///Users/garu/Downloads/Cypress_TS/cypress/screenshots/Transactions.cy.ts/Transaction Tests -- Verify the transactions (failed).png" target="_blank">Screenshot</a></td>
+          <td style="width: 15%;">9.355</td>
+        </tr>
+      
+        <tr >
+          <td style="width: 20%; text-align: left;">API Tests - Verify the HTTP calls</td>
+          <td style="width: 30%; text-align: left;" class="passed">Pass
+ </td>
+          <td style="width: 20%; text-align: center;"><a href="file:///Users/garu/Downloads/Cypress_TS/cypress/videos/API.cy.ts.mp4" target="_blank">Video</a></td>
+          <td style="width: 15%;">9.453</td>
+        </tr>
+      
+        <tr >
+          <td style="width: 20%; text-align: left;">Checkout tests - Checkout Happy Test</td>
+          <td style="width: 30%; text-align: left;" class="passed">Pass
+ </td>
+          <td style="width: 20%; text-align: center;"><a href="file:///Users/garu/Downloads/Cypress_TS/cypress/videos/Checkout.cy.ts.mp4" target="_blank">Video</a></td>
+          <td style="width: 15%;">0.694</td>
+        </tr>
+      
+        <tr >
+          <td style="width: 20%; text-align: left;">Database Tests - Verify if the data is returned from the backend</td>
+          <td style="width: 30%; text-align: left;" class="passed">Pass
+ </td>
+          <td style="width: 20%; text-align: center;"><a href="file:///Users/garu/Downloads/Cypress_TS/cypress/videos/Database.cy.ts.mp4" target="_blank">Video</a></td>
+          <td style="width: 15%;">8.45</td>
+        </tr>
+      
+          </tbody>
+        </table>
+      </div>
+    </body>
+    </html>
+  
