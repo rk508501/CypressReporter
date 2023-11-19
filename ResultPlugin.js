@@ -44,23 +44,23 @@ function generateHTMLReport(result, config) {
   <table class="table mt-3">
     <tbody>
       <tr>
-        <th>Passing %:</th>
+        <th>Passing %</th>
         <td>${((result.totalPassed / result.totalTests) * 100).toFixed(2)}%</td>
       </tr>
       <tr>
-        <th>Failing %:</th>
+        <th>Failing %</th>
         <td>${((result.totalFailed / result.totalTests) * 100).toFixed(2)}%</td>
       </tr>
       <tr>
-        <th>Browser:</th>
+        <th>Browser</th>
         <td>${result.browserName}</td>
       </tr>
       <tr>
-        <th>Browser Ver.:</th>
+        <th>Browser Ver.</th>
         <td>${result.browserVersion}</td>
       </tr>
       <tr>
-        <th>OS Platform:</th>
+        <th>OS Platform</th>
         <td>${result.osName}</td>
       </tr>
     </tbody>
