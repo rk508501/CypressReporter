@@ -45,11 +45,11 @@ function generateHTMLReport(result, config) {
     <tbody>
       <tr>
         <th>Passing %</th>
-        <td>${((result.totalPassed / result.totalTests) * 100).toFixed(2)}%</td>
+        <td>${Math.round((result.totalPassed / result.totalTests) * 100)}%</td>
       </tr>
       <tr>
         <th>Failing %</th>
-        <td>${((result.totalFailed / result.totalTests) * 100).toFixed(2)}%</td>
+        <td>${Math.round((result.totalFailed / result.totalTests) * 100)}%</td>
       </tr>
       <tr>
         <th>Browser</th>
