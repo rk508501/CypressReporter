@@ -38,7 +38,34 @@ function generateHTMLReport(result, config) {
     </div>
   `;
 
-  const chartCanvas = `<canvas id="testChart" width="400" height="400"></canvas>`;
+  const chartCanvas = `<canvas id="testChart" width="250" height="250"></canvas>`;
+
+  const summaryTable = `
+  <table class="table mt-3">
+    <tbody>
+      <tr>
+        <th>Passing %:</th>
+        <td>${((result.totalPassed / result.totalTests) * 100).toFixed(2)}%</td>
+      </tr>
+      <tr>
+        <th>Failing %:</th>
+        <td>${((result.totalFailed / result.totalTests) * 100).toFixed(2)}%</td>
+      </tr>
+      <tr>
+        <th>Browser:</th>
+        <td>${result.browserName}</td>
+      </tr>
+      <tr>
+        <th>Browser Version:</th>
+        <td>${result.browserVersion}</td>
+      </tr>
+      <tr>
+        <th>OS:</th>
+        <td>${result.osName}</td>
+      </tr>
+    </tbody>
+  </table>
+`;
 
   const reportContent = `
     <!DOCTYPE html>
@@ -66,8 +93,19 @@ function generateHTMLReport(result, config) {
     </head>
     <body>
       ${menubarContent}
-      <div class="container mt-3 text-center">
-      ${chartCanvas}
+      <div class="container mt-3">
+      <div class="row">
+        <div class="col">
+          <div class="text-center">
+            ${chartCanvas}
+          </div>
+        </div>
+        <div class="col">
+          <div class="info-table-container">
+            ${summaryTable}
+          </div>
+        </div>
+      </div>
     </div>
       <div class="container mt-3">
         <table class="table mt-3">
@@ -117,6 +155,10 @@ function generateHTMLReport(result, config) {
   fs.writeFileSync('TestReport/Report.html', reportContent);
 }
 
+function calculatePassingPercentage(run) {
+  return (passedTests / totalTests) * 100;
+}
+
 function generateRows(runs) {
   let passedTests = '';
   let failedTests = '';
@@ -129,11 +171,11 @@ function generateRows(runs) {
       const isPassed = test.state === 'passed';
       const rowColor = isFailed ? 'style="background-color: #ffcccc;"' : '';
       let statusClass
-      if(isFailed){
+      if (isFailed) {
         statusClass = "failed"
-      }else if(isSkipped){
+      } else if (isSkipped) {
         statusClass = "skipped"
-      }else if(isPassed){
+      } else if (isPassed) {
         statusClass = "passed"
       }
 
@@ -145,13 +187,13 @@ function generateRows(runs) {
       displayError = displayError + `\n ${errorFile}`;
 
       //If the status is pending update display text
-      if(test.state === 'pending'){
+      if (test.state === 'pending') {
         displayError = "Skipped"
-      }else{
+      } else {
         //Test is not skipped
       }
 
-      const duration =run.stats.duration/1000;
+      const duration = run.stats.duration / 1000;
 
       const videoLink = run.video
         ? `<a href="file://${run.video}" target="_blank">Video</a>`
@@ -190,9 +232,9 @@ function generateRows(runs) {
     const match = errorMessage.match(regex);
     // If there is a match, return the file info; otherwise, return null
     return match ? match[1] : null;
-    }
+  }
 
-    return `${failedTests}${passedTests}${skippedTests}`;
+  return `${failedTests}${passedTests}${skippedTests}`;
 }
 
 module.exports = (on, config) => {
