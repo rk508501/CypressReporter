@@ -64,10 +64,10 @@ function generateHTMLReport(result, config) {
         <table class="table mt-3">
           <thead>
             <tr>
-              <th style="width: 20%;">Test</th>
-              <th style="width: 30%;">Result</th>
-              <th style="width: 20%;">Screenshot/Video</th>
-              <th style="width: 15%;">Duration</th>
+              <th style="width: 45%;">Test</th>
+              <th style="width: 45%;">Result</th>
+              <th style="width: 5%;">Artifacts</th>
+              <th style="width: 5%;">Duration</th>
             </tr>
           </thead>
           <tbody>
@@ -114,15 +114,15 @@ function generateRows(runs) {
 
       // Display "Video / Screenshot" and remove slash if there is no screenshot
       const screenshotAndVideoLink = screenshotLink
-        ? `${videoLink} / ${screenshotLink}`
+        ? `${videoLink} ${screenshotLink}`
         : videoLink;
 
       const row = `
         <tr ${rowColor}>
-          <td style="width: 20%; text-align: left;">${test.title.join(' - ')}</td>
-          <td style="width: 30%; text-align: left;" class="${statusClass}">${displayError}</td>
-          <td style="width: 20%; text-align: center;">${screenshotAndVideoLink}</td>
-          <td style="width: 15%;">${duration}</td>
+          <td style="width: 45%; text-align: left;">${test.title.join(' - ')}</td>
+          <td style="width: 45%; text-align: left;" class="${statusClass}">${displayError}</td>
+          <td style="width: 5%; text-align: center;">${screenshotAndVideoLink}</td>
+          <td style="width: 5%;">${duration}</td>
         </tr>
       `;
 
