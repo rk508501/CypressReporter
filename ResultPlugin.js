@@ -56,11 +56,11 @@ function generateHTMLReport(result, config) {
         <td>${result.browserName}</td>
       </tr>
       <tr>
-        <th>Browser Version:</th>
+        <th>Browser Ver.:</th>
         <td>${result.browserVersion}</td>
       </tr>
       <tr>
-        <th>OS:</th>
+        <th>OS Platform:</th>
         <td>${result.osName}</td>
       </tr>
     </tbody>
