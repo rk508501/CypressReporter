@@ -227,11 +227,11 @@ function generateRows(runs) {
       const durationFormatted = `${duration} sec`;
 
       const videoLink = run.video
-        ? `<a href="file://${run.video}" target="_blank">Video</a>`
+        ? `<a href="${convertToLocalUrl(run.video)}" target="_blank">Video</a>`
         : '';
 
       const screenshotLink = run?.screenshots[0]?.path
-        ? `<a href="file://${run?.screenshots[0]?.path}" target="_blank">Screenshot</a>`
+        ? `<a href="${convertToLocalUrl(run?.screenshots[0]?.path)}" target="_blank">Screenshot</a>`
         : '';
 
       // Display "Video / Screenshot" and remove slash if there is no screenshot
@@ -256,6 +256,19 @@ function generateRows(runs) {
         skippedTests += row;
       }
     }
+  }
+
+  function convertToLocalUrl(filePath, port = 8080) {
+    // Assuming the videos are served from the root of the server
+    const baseUrl = `http://127.0.0.1:${port}`;
+  
+    // Replace the local path with an empty string and replace any backslashes with forward slashes
+    const relativePath = filePath.replace(/.*cypress/, '/cypress').replace(/\\/g, '/');
+  
+    // Combine the base URL and the relative path
+    const url = `${baseUrl}${relativePath}`;
+  
+    return url;
   }
 
   function getErrorFileInfo(errorMessage) {
