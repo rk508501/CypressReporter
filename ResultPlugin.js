@@ -44,23 +44,23 @@ function generateHTMLReport(result, config) {
   <table class="table mt-3">
     <tbody>
       <tr>
-        <th>Passing %</th>
+        <th class="shaded-label">Passing %</th>
         <td>${Math.round((result.totalPassed / result.totalTests) * 100)}%</td>
       </tr>
       <tr>
-        <th>Failing %</th>
+        <th class="shaded-label">Failing %</th>
         <td>${Math.round((result.totalFailed / result.totalTests) * 100)}%</td>
       </tr>
       <tr>
-        <th>Browser</th>
+        <th class="shaded-label">Browser</th>
         <td>${result.browserName}</td>
       </tr>
       <tr>
-        <th>Browser Ver.</th>
+        <th class="shaded-label">Browser Ver.</th>
         <td>${result.browserVersion}</td>
       </tr>
       <tr>
-        <th>OS Platform</th>
+        <th class="shaded-label">OS Platform</th>
         <td>${result.osName}</td>
       </tr>
     </tbody>
@@ -77,6 +77,9 @@ function generateHTMLReport(result, config) {
       <style>
         th, td {
           text-align: center;
+        }
+        th.shaded-label {
+          color: #A0A0A0; /* shade of grey */
         }
         .passed {
           color: green;
