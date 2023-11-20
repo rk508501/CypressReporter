@@ -17,15 +17,33 @@ function readConfig() {
 }
 
 function generateHTMLReport(result, config) {
-  const startTime = new Date(result.startedTestsAt).toLocaleString();
+  const startTime = result.startedTestsAt;
   const totalDurationInSeconds = result.totalDuration / 1000; // convert milliseconds to seconds
   const minutes = Math.floor(totalDurationInSeconds / 60);
   const seconds = Math.floor(totalDurationInSeconds % 60);
-  const totalDurationFormatted = `${minutes} min:${seconds} sec`;
+  const totalDurationFormatted = `${minutes} min ${seconds} sec`;
   const totalPass = result.totalPassed || 0;
   const totalFail = result.totalFailed || 0;
   const totalSkipped = result.totalPending || 0;
   const totalTests = result.totalTests || 0;
+  const osName = result.osName;
+
+  function parseTestStartTime(dateToParse) {
+    const date = new Date(dateToParse);
+    
+    const options = {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false,
+      timeZone: 'America/New_York',
+    };
+  
+    return new Intl.DateTimeFormat('en-US', options).format(date);
+  }
 
   const menubarContent = `
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -34,7 +52,7 @@ function generateHTMLReport(result, config) {
   </nav>
   <div class="container mt-3">
     <div class="navbar-text" style="font-size: medium; color: #888;">
-      Time: ${startTime} | Duration: ${totalDurationFormatted} |
+      Start Time : ${parseTestStartTime(startTime)}  | Platform: ${osName} |
       Passed: ${totalPass} | Failed: ${totalFail} | Skipped: ${totalSkipped} |
       Total Tests: ${totalTests}
     </div>
@@ -63,8 +81,8 @@ function generateHTMLReport(result, config) {
         <td>${result.browserVersion}</td>
       </tr>
       <tr>
-        <th class="shaded-label">OS Platform</th>
-        <td>${result.osName}</td>
+        <th class="shaded-label">Execution time</th>
+        <td>${totalDurationFormatted}</td>
       </tr>
     </tbody>
   </table>
