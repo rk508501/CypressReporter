@@ -18,25 +18,28 @@ function readConfig() {
 
 function generateHTMLReport(result, config) {
   const startTime = new Date(result.startedTestsAt).toLocaleString();
-  const totalDuration = result.totalDuration / 1000; // convert milliseconds to seconds
+  const totalDurationInSeconds = result.totalDuration / 1000; // convert milliseconds to seconds
+  const minutes = Math.floor(totalDurationInSeconds / 60);
+  const seconds = Math.floor(totalDurationInSeconds % 60);
+  const totalDurationFormatted = `${minutes} min:${seconds} sec`;
   const totalPass = result.totalPassed || 0;
   const totalFail = result.totalFailed || 0;
   const totalSkipped = result.totalPending || 0;
   const totalTests = result.totalTests || 0;
 
   const menubarContent = `
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <img src="${config.logo}" alt="Logo" class="mr-2" style="height: 30px;">
-      <span class="navbar-brand mb-0 h1">${config.title}</span>
-    </nav>
-    <div class="container mt-3">
-      <div class="navbar-text" style="font-size: smaller; color: #888;">
-        Time: ${startTime} | Duration: ${totalDuration.toFixed(3)} seconds |
-        Passed: ${totalPass} | Failed: ${totalFail} | Skipped: ${totalSkipped} |
-        Total Tests: ${totalTests}
-      </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <img src="${config.logo}" alt="Logo" class="mr-2" style="height: 30px;">
+    <span class="navbar-brand mb-0 h1">${config.title}</span>
+  </nav>
+  <div class="container mt-3">
+    <div class="navbar-text" style="font-size: medium; color: #888;">
+      Time: ${startTime} | Duration: ${totalDurationFormatted} |
+      Passed: ${totalPass} | Failed: ${totalFail} | Skipped: ${totalSkipped} |
+      Total Tests: ${totalTests}
     </div>
-  `;
+  </div>
+`;
 
   const chartCanvas = `<canvas id="testChart" width="250" height="250"></canvas>`;
 
@@ -88,7 +91,7 @@ function generateHTMLReport(result, config) {
           color: red;
         }
         .skipped {
-          color: #FFD580;
+          color: #FEBE10;
         }
       </style>
       <title>${config.title}</title>
@@ -172,7 +175,10 @@ function generateRows(runs) {
       const isFailed = test.state === 'failed';
       const isSkipped = test.state === 'pending';
       const isPassed = test.state === 'passed';
-      const rowColor = isFailed ? 'style="background-color: #ffcccc;"' : '';
+      //Enable for shading failed tests red
+      //const rowColor = isFailed ? 'style="background-color: #ffcccc;"' : '';
+      const rowColor = isFailed ? '' : '';
+
       let statusClass
       if (isFailed) {
         statusClass = "failed"
@@ -196,7 +202,11 @@ function generateRows(runs) {
         //Test is not skipped
       }
 
-      const duration = run.stats.duration / 1000;
+      const actualDuration = run.stats.duration / 1000;
+      const roundedDuration = Math.round(actualDuration);
+      
+      const duration = roundedDuration !== 0 ? roundedDuration : actualDuration;
+      const durationFormatted = `${duration} sec`;
 
       const videoLink = run.video
         ? `<a href="file://${run.video}" target="_blank">Video</a>`
@@ -216,7 +226,7 @@ function generateRows(runs) {
           <td style="width: 45%; text-align: left;">${test.title.join(' - ')}</td>
           <td style="width: 45%; text-align: left;" class="${statusClass}">${displayError}</td>
           <td style="width: 5%; text-align: center;">${screenshotAndVideoLink}</td>
-          <td style="width: 5%;">${duration}</td>
+          <td style="width: 5%;">${durationFormatted}</td>
         </tr>
       `;
 
