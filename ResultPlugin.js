@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const Chart = require('chart.js/auto');
+const express = require('express');
 
 function readConfig() {
   const configPath = 'reportconfig.json';
@@ -30,7 +31,7 @@ function generateHTMLReport(result, config) {
 
   function parseTestStartTime(dateToParse) {
     const date = new Date(dateToParse);
-    
+
     const options = {
       year: 'numeric',
       month: '2-digit',
@@ -41,7 +42,7 @@ function generateHTMLReport(result, config) {
       hour12: false,
       timeZone: 'America/New_York',
     };
-  
+
     return new Intl.DateTimeFormat('en-US', options).format(date);
   }
 
@@ -52,8 +53,8 @@ function generateHTMLReport(result, config) {
   </nav>
   <div class="container mt-3">
     <div class="navbar-text" style="font-size: medium; color: #888;">
-      Start Time : ${parseTestStartTime(startTime)}  | Platform: ${osName} |
-      Passed: ${totalPass} | Failed: ${totalFail} | Skipped: ${totalSkipped} |
+      Browser: ${result.browserName} - ${result.browserVersion}  |  Platform: ${osName}  |
+      Passed: ${totalPass}  | Failed: ${totalFail} |  Skipped: ${totalSkipped} |
       Total Tests: ${totalTests}
     </div>
   </div>
@@ -73,12 +74,12 @@ function generateHTMLReport(result, config) {
         <td>${Math.round((result.totalFailed / result.totalTests) * 100)}%</td>
       </tr>
       <tr>
-        <th class="shaded-label">Browser</th>
-        <td>${result.browserName}</td>
+        <th class="shaded-label">Start Time</th>
+        <td>${formatDateString(result.startedTestsAt)} </td>
       </tr>
       <tr>
-        <th class="shaded-label">Browser Ver.</th>
-        <td>${result.browserVersion}</td>
+        <th class="shaded-label">End Time</th>
+        <td>${formatDateString(result.endedTestsAt)}</td>
       </tr>
       <tr>
         <th class="shaded-label">Execution time</th>
@@ -161,7 +162,7 @@ function generateHTMLReport(result, config) {
               labels: ['Pass', 'Fail', 'Skipped'],
               datasets: [{
                 data: [pass, fail, skipped],
-                backgroundColor: ['#86af49', '#eca1a6', '#ffef96'], // Customize colors if needed
+                backgroundColor: ['#568203', '#CD5C5C', '#FFC72C'], // Customize colors if needed
               }]
             },
             options: {
@@ -181,6 +182,24 @@ function generateHTMLReport(result, config) {
 
 function calculatePassingPercentage(run) {
   return (passedTests / totalTests) * 100;
+}
+
+function formatDateString(inputDate) {
+  // Parse the input date string
+  const dateObject = new Date(inputDate);
+
+  // Format the date
+  const formattedDate = dateObject.toLocaleString('en-US', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: true,
+    timeZoneName: 'short',
+  });
+
+  return formattedDate;
 }
 
 function generateRows(runs) {
@@ -222,7 +241,7 @@ function generateRows(runs) {
 
       const actualDuration = run.stats.duration / 1000;
       const roundedDuration = Math.round(actualDuration);
-      
+
       const duration = roundedDuration !== 0 ? roundedDuration : actualDuration;
       const durationFormatted = `${duration} sec`;
 
@@ -258,16 +277,16 @@ function generateRows(runs) {
     }
   }
 
-  function convertToLocalUrl(filePath, port = 8080) {
+  function convertToLocalUrl(filePath, port = 5500) {
     // Assuming the videos are served from the root of the server
     const baseUrl = `http://127.0.0.1:${port}`;
-  
+
     // Replace the local path with an empty string and replace any backslashes with forward slashes
     const relativePath = filePath.replace(/.*cypress/, '/cypress').replace(/\\/g, '/');
-  
+
     // Combine the base URL and the relative path
     const url = `${baseUrl}${relativePath}`;
-  
+
     return url;
   }
 
@@ -303,5 +322,7 @@ module.exports = (on, config) => {
     const config = readConfig();
     generateHTMLReport(results, config);
 
+    //----------------- START REPORT SERVER ------------------ 
+    //Host a server for viewing the report and screenshots/videos
   });
 };
