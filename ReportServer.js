@@ -28,5 +28,7 @@ module.exports = function () {
     function replaceSpacesInUrls(url) {
         return url.replace(/%20/g, ' ');
     }
-
 }
+
+// const startServer = require('./StartServer')
+// startServer()
