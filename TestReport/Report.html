@@ -9,101 +9,124 @@
         th, td {
           text-align: center;
         }
+        th.shaded-label {
+          color: #A0A0A0; /* shade of grey */
+        }
         .passed {
           color: green;
         }
         .failed {
           color: red;
         }
+        .skipped {
+          color: #FEBE10;
+        }
       </style>
       <title>Test Automation Report</title>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
     <body>
       
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <img src="https://user-images.githubusercontent.com/2801156/153322291-8b186487-5127-48f7-aa6d-b0ef350f8575.png" alt="Logo" class="mr-2" style="height: 30px;">
-      <span class="navbar-brand mb-0 h1">Test Automation Report</span>
-    </nav>
-    <div class="container mt-3">
-      <div class="navbar-text" style="font-size: smaller; color: #888;">
-        Time: 11/18/2023, 11:36:24 PM | Duration: 60.498 seconds |
-        Passed: 3 | Failed: 4 | Skipped: 0 |
-        Total Tests: 7
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <img src="https://user-images.githubusercontent.com/2801156/153322291-8b186487-5127-48f7-aa6d-b0ef350f8575.png" alt="Logo" class="mr-2" style="height: 30px;">
+    <span class="navbar-brand mb-0 h1">Test Automation Report</span>
+  </nav>
+  <div class="container mt-3">
+    <div class="navbar-text" style="font-size: medium; color: #888;">
+      Browser: electron - 114.0.5735.289  |  Platform: win32  |
+      Passed: 1  | Failed: 0 |  Skipped: 0 |
+      Total Tests: 1
+    </div>
+  </div>
+
+      <div class="container mt-3">
+      <div class="row">
+        <div class="col">
+          <div class="text-center">
+            <canvas id="testChart" width="250" height="250"></canvas>
+          </div>
+        </div>
+        <div class="col">
+          <div class="info-table-container">
+            
+  <table class="table mt-3">
+    <tbody>
+      <tr>
+        <th class="shaded-label">Passing %</th>
+        <td>100%</td>
+      </tr>
+      <tr>
+        <th class="shaded-label">Failing %</th>
+        <td>0%</td>
+      </tr>
+      <tr>
+        <th class="shaded-label">Start Time</th>
+        <td>Nov 22, 2023, 09:27 PM EST </td>
+      </tr>
+      <tr>
+        <th class="shaded-label">End Time</th>
+        <td>Nov 22, 2023, 09:27 PM EST</td>
+      </tr>
+      <tr>
+        <th class="shaded-label">Execution time</th>
+        <td>0 min 6 sec</td>
+      </tr>
+    </tbody>
+  </table>
+
+          </div>
+        </div>
       </div>
     </div>
-  
-      <div class="container mt-3 text-center"></div>
       <div class="container mt-3">
         <table class="table mt-3">
           <thead>
             <tr>
-              <th style="width: 20%;">Test</th>
-              <th style="width: 30%;">Result</th>
-              <th style="width: 20%;">Screenshot/Video</th>
-              <th style="width: 15%;">Duration</th>
+              <th style="width: 45%;">Test</th>
+              <th style="width: 45%;">Result</th>
+              <th style="width: 5%;">Artifacts</th>
+              <th style="width: 5%;">Duration</th>
             </tr>
           </thead>
           <tbody>
             
-        <tr style="background-color: #ffcccc;">
-          <td style="width: 20%; text-align: left;">Billing Page Tests - Verify the billing methods</td>
-          <td style="width: 30%; text-align: left;" class="failed">AssertionError: Timed out retrying after 10ms: Expected to find content: 'Non Existent' but never did.
- webpack://cypress_ts/./cypress/e2e/Billing.cy.ts:4:51)</td>
-          <td style="width: 20%; text-align: center;"><a href="file:///Users/garu/Downloads/Cypress_TS/cypress/videos/Billing.cy.ts.mp4" target="_blank">Video</a> / <a href="file:///Users/garu/Downloads/Cypress_TS/cypress/screenshots/Billing.cy.ts/Billing Page Tests -- Verify the billing methods (failed).png" target="_blank">Screenshot</a></td>
-          <td style="width: 15%;">13.798</td>
-        </tr>
-      
-        <tr style="background-color: #ffcccc;">
-          <td style="width: 20%; text-align: left;">Landing Page Tests - Verify the landing page elements</td>
-          <td style="width: 30%; text-align: left;" class="failed">AssertionError: Timed out retrying after 10ms: Expected to find content: 'Non Existent' but never did.
- webpack://cypress_ts/./cypress/e2e/Landing.cy.ts:4:51)</td>
-          <td style="width: 20%; text-align: center;"><a href="file:///Users/garu/Downloads/Cypress_TS/cypress/videos/Landing.cy.ts.mp4" target="_blank">Video</a> / <a href="file:///Users/garu/Downloads/Cypress_TS/cypress/screenshots/Landing.cy.ts/Landing Page Tests -- Verify the landing page elements (failed).png" target="_blank">Screenshot</a></td>
-          <td style="width: 15%;">9.24</td>
-        </tr>
-      
-        <tr style="background-color: #ffcccc;">
-          <td style="width: 20%; text-align: left;">Login Tests - Verify the login tests</td>
-          <td style="width: 30%; text-align: left;" class="failed">AssertionError: Timed out retrying after 10ms: Expected to find content: 'Non Existent' but never did.
- webpack://cypress_ts/./cypress/e2e/Login.cy.ts:4:51)</td>
-          <td style="width: 20%; text-align: center;"><a href="file:///Users/garu/Downloads/Cypress_TS/cypress/videos/Login.cy.ts.mp4" target="_blank">Video</a> / <a href="file:///Users/garu/Downloads/Cypress_TS/cypress/screenshots/Login.cy.ts/Login Tests -- Verify the login tests (failed).png" target="_blank">Screenshot</a></td>
-          <td style="width: 15%;">9.508</td>
-        </tr>
-      
-        <tr style="background-color: #ffcccc;">
-          <td style="width: 20%; text-align: left;">Transaction Tests - Verify the transactions</td>
-          <td style="width: 30%; text-align: left;" class="failed">AssertionError: Timed out retrying after 10ms: Expected to find content: 'Non Existent' but never did.
- webpack://cypress_ts/./cypress/e2e/Transactions.cy.ts:4:51)</td>
-          <td style="width: 20%; text-align: center;"><a href="file:///Users/garu/Downloads/Cypress_TS/cypress/videos/Transactions.cy.ts.mp4" target="_blank">Video</a> / <a href="file:///Users/garu/Downloads/Cypress_TS/cypress/screenshots/Transactions.cy.ts/Transaction Tests -- Verify the transactions (failed).png" target="_blank">Screenshot</a></td>
-          <td style="width: 15%;">9.355</td>
-        </tr>
-      
         <tr >
-          <td style="width: 20%; text-align: left;">API Tests - Verify the HTTP calls</td>
-          <td style="width: 30%; text-align: left;" class="passed">Pass
+          <td style="width: 45%; text-align: left;">API Tests - Verify the HTTP calls</td>
+          <td style="width: 45%; text-align: left;" class="passed">Pass
  </td>
-          <td style="width: 20%; text-align: center;"><a href="file:///Users/garu/Downloads/Cypress_TS/cypress/videos/API.cy.ts.mp4" target="_blank">Video</a></td>
-          <td style="width: 15%;">9.453</td>
-        </tr>
-      
-        <tr >
-          <td style="width: 20%; text-align: left;">Checkout tests - Checkout Happy Test</td>
-          <td style="width: 30%; text-align: left;" class="passed">Pass
- </td>
-          <td style="width: 20%; text-align: center;"><a href="file:///Users/garu/Downloads/Cypress_TS/cypress/videos/Checkout.cy.ts.mp4" target="_blank">Video</a></td>
-          <td style="width: 15%;">0.694</td>
-        </tr>
-      
-        <tr >
-          <td style="width: 20%; text-align: left;">Database Tests - Verify if the data is returned from the backend</td>
-          <td style="width: 30%; text-align: left;" class="passed">Pass
- </td>
-          <td style="width: 20%; text-align: center;"><a href="file:///Users/garu/Downloads/Cypress_TS/cypress/videos/Database.cy.ts.mp4" target="_blank">Video</a></td>
-          <td style="width: 15%;">8.45</td>
+          <td style="width: 5%; text-align: center;"><a href="http://127.0.0.1:5500/cypress/videos/API.cy.ts.mp4" target="_blank">Video</a></td>
+          <td style="width: 5%;">6 sec</td>
         </tr>
       
           </tbody>
         </table>
       </div>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          // Call a function to draw the pie chart
+          drawPieChart(1, 0, 0);
+        });
+
+        function drawPieChart(pass, fail, skipped) {
+          var ctx = document.getElementById('testChart').getContext('2d');
+          var myPieChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+              labels: ['Pass', 'Fail', 'Skipped'],
+              datasets: [{
+                data: [pass, fail, skipped],
+                backgroundColor: ['#568203', '#CD5C5C', '#FFC72C'], // Customize colors if needed
+              }]
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+            }
+          });
+        }
+      </script>
+
     </body>
     </html>
   

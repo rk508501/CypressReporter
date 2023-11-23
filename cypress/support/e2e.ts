@@ -1,56 +1,22 @@
 
 import './commands';
 
-export interface PersonDetails {
-    "SSN": number,
-    "firstName": string
-    "address": string
-}
+before(()=>{
+    cy.log("Before all")
+})
 
-interface RootObject {
-    users: User[];
-    products: Product[];
-    orders: Order[];
-}
-
-interface Order {
-    id: number;
-    user_id: number;
-    products: Product2[];
-}
-
-interface Product2 {
-    product_id: number;
-    quantity: number;
-}
-
-interface Product {
-    id: number;
-    name: string;
-    price: number;
-    categories: string[];
-}
-
-interface User {
-    id: number;
-    name: string;
-    email: string;
-    address: Address;
-    phone_numbers: Phonenumber[];
-}
-
-
-
-export namespace Interfaces {
-    interface Phonenumber {
-        type: string;
-        number: string;
+export function generateUUID() {
+    let hex = [];
+    for (let i = 0; i < 36; i++) {
+      let random = Math.floor(Math.random() * 16);
+      hex.push(random.toString(16));
     }
-    
-    interface Address {
-        street: string;
-        city: string;
-        state: string;
-        zip: string;
-    }
-}
+  
+    // Set the version number to 4
+    hex[8] = hex[8] & 0x3 | 0x8;
+  
+    // Set the variant to 10
+    hex[13] = hex[13] & 0xF | 0x4;
+  
+    return hex.join('');
+  }
