@@ -33,9 +33,9 @@
   </nav>
   <div class="container mt-3">
     <div class="navbar-text" style="font-size: medium; color: #888;">
-      Browser: electron - 114.0.5735.289  |  Platform: win32  |
-      Passed: 1  | Failed: 0 |  Skipped: 0 |
-      Total Tests: 1
+      Browser: edge - 119.0.2151.72  |  Platform: win32  |
+      Passed: 4  | Failed: 5 |  Skipped: 2 |
+      Total Tests: 11
     </div>
   </div>
 
@@ -53,23 +53,23 @@
     <tbody>
       <tr>
         <th class="shaded-label">Passing %</th>
-        <td>100%</td>
+        <td>36%</td>
       </tr>
       <tr>
         <th class="shaded-label">Failing %</th>
-        <td>0%</td>
+        <td>45%</td>
       </tr>
       <tr>
         <th class="shaded-label">Start Time</th>
-        <td>Nov 22, 2023, 09:27 PM EST </td>
+        <td>Nov 22, 2023, 09:40 PM EST </td>
       </tr>
       <tr>
         <th class="shaded-label">End Time</th>
-        <td>Nov 22, 2023, 09:27 PM EST</td>
+        <td>Nov 22, 2023, 09:41 PM EST</td>
       </tr>
       <tr>
         <th class="shaded-label">Execution time</th>
-        <td>0 min 6 sec</td>
+        <td>0 min 52 sec</td>
       </tr>
     </tbody>
   </table>
@@ -91,11 +91,89 @@
           <tbody>
             
         <tr >
-          <td style="width: 45%; text-align: left;">API Tests - Verify the HTTP calls</td>
+          <td style="width: 45%; text-align: left;">Billing Page Tests - Verify the billing methods</td>
+          <td style="width: 45%; text-align: left;" class="failed">AssertionError: Timed out retrying after 10ms: Expected to find content: 'Non Existent' but never did.
+ webpack://cypress_ts/./cypress/e2e/Billing.cy.ts:5:51)</td>
+          <td style="width: 5%; text-align: center;"><a href="http://127.0.0.1:5500/cypress/videos/Billing.cy.ts.mp4" target="_blank">Video</a> <a href="http://127.0.0.1:5500/cypress/screenshots/Billing.cy.ts/Billing Page Tests -- Verify the billing methods (failed).png" target="_blank">Screenshot</a></td>
+          <td style="width: 5%;">17 sec</td>
+        </tr>
+      
+        <tr >
+          <td style="width: 45%; text-align: left;">Checkout tests - Checkout Happy Test 4</td>
+          <td style="width: 45%; text-align: left;" class="failed">Pass
+ </td>
+          <td style="width: 5%; text-align: center;"><a href="http://127.0.0.1:5500/cypress/videos/Checkout.cy.ts.mp4" target="_blank">Video</a> <a href="http://127.0.0.1:5500/cypress/screenshots/Checkout.cy.ts/Checkout tests -- Checkout Happy Test 4 (failed).png" target="_blank">Screenshot</a></td>
+          <td style="width: 5%;">2 sec</td>
+        </tr>
+      
+        <tr >
+          <td style="width: 45%; text-align: left;">Landing Page Tests - Verify the landing page elements</td>
+          <td style="width: 45%; text-align: left;" class="failed">AssertionError: Timed out retrying after 10ms: Expected to find content: 'Non Existent' but never did.
+ webpack://cypress_ts/./cypress/e2e/Landing.cy.ts:5:51)</td>
+          <td style="width: 5%; text-align: center;"><a href="http://127.0.0.1:5500/cypress/videos/Landing.cy.ts.mp4" target="_blank">Video</a> <a href="http://127.0.0.1:5500/cypress/screenshots/Landing.cy.ts/Landing Page Tests -- Verify the landing page elements (failed).png" target="_blank">Screenshot</a></td>
+          <td style="width: 5%;">11 sec</td>
+        </tr>
+      
+        <tr >
+          <td style="width: 45%; text-align: left;">Login Tests - Verify the login tests</td>
+          <td style="width: 45%; text-align: left;" class="failed">AssertionError: Timed out retrying after 10ms: Expected to find content: 'Non Existent' but never did.
+ webpack://cypress_ts/./cypress/e2e/Login.cy.ts:8:51)</td>
+          <td style="width: 5%; text-align: center;"><a href="http://127.0.0.1:5500/cypress/videos/Login.cy.ts.mp4" target="_blank">Video</a> <a href="http://127.0.0.1:5500/cypress/screenshots/Login.cy.ts/Login Tests -- Verify the login tests (failed).png" target="_blank">Screenshot</a></td>
+          <td style="width: 5%;">11 sec</td>
+        </tr>
+      
+        <tr >
+          <td style="width: 45%; text-align: left;">Transaction Tests - Verify the transactions</td>
+          <td style="width: 45%; text-align: left;" class="failed">AssertionError: Timed out retrying after 10ms: Expected to find content: 'Non Existent' but never did.
+ webpack://cypress_ts/./cypress/e2e/Transactions.cy.ts:5:51)</td>
+          <td style="width: 5%; text-align: center;"><a href="http://127.0.0.1:5500/cypress/videos/Transactions.cy.ts.mp4" target="_blank">Video</a> <a href="http://127.0.0.1:5500/cypress/screenshots/Transactions.cy.ts/Transaction Tests -- Verify the transactions (failed).png" target="_blank">Screenshot</a></td>
+          <td style="width: 5%;">12 sec</td>
+        </tr>
+      
+        <tr >
+          <td style="width: 45%; text-align: left;">Checkout tests - Checkout Happy Test 1</td>
           <td style="width: 45%; text-align: left;" class="passed">Pass
  </td>
+          <td style="width: 5%; text-align: center;"><a href="http://127.0.0.1:5500/cypress/videos/Checkout.cy.ts.mp4" target="_blank">Video</a> <a href="http://127.0.0.1:5500/cypress/screenshots/Checkout.cy.ts/Checkout tests -- Checkout Happy Test 4 (failed).png" target="_blank">Screenshot</a></td>
+          <td style="width: 5%;">2 sec</td>
+        </tr>
+      
+        <tr >
+          <td style="width: 45%; text-align: left;">Checkout tests - Checkout Happy Test 2</td>
+          <td style="width: 45%; text-align: left;" class="passed">Pass
+ </td>
+          <td style="width: 5%; text-align: center;"><a href="http://127.0.0.1:5500/cypress/videos/Checkout.cy.ts.mp4" target="_blank">Video</a> <a href="http://127.0.0.1:5500/cypress/screenshots/Checkout.cy.ts/Checkout tests -- Checkout Happy Test 4 (failed).png" target="_blank">Screenshot</a></td>
+          <td style="width: 5%;">2 sec</td>
+        </tr>
+      
+        <tr >
+          <td style="width: 45%; text-align: left;">Checkout tests - Checkout Happy Test 3</td>
+          <td style="width: 45%; text-align: left;" class="passed">Pass
+ </td>
+          <td style="width: 5%; text-align: center;"><a href="http://127.0.0.1:5500/cypress/videos/Checkout.cy.ts.mp4" target="_blank">Video</a> <a href="http://127.0.0.1:5500/cypress/screenshots/Checkout.cy.ts/Checkout tests -- Checkout Happy Test 4 (failed).png" target="_blank">Screenshot</a></td>
+          <td style="width: 5%;">2 sec</td>
+        </tr>
+      
+        <tr >
+          <td style="width: 45%; text-align: left;">Login Tests - UUID Test</td>
+          <td style="width: 45%; text-align: left;" class="passed">AssertionError: Timed out retrying after 10ms: Expected to find content: 'Non Existent' but never did.
+ webpack://cypress_ts/./cypress/e2e/Login.cy.ts:8:51)</td>
+          <td style="width: 5%; text-align: center;"><a href="http://127.0.0.1:5500/cypress/videos/Login.cy.ts.mp4" target="_blank">Video</a> <a href="http://127.0.0.1:5500/cypress/screenshots/Login.cy.ts/Login Tests -- Verify the login tests (failed).png" target="_blank">Screenshot</a></td>
+          <td style="width: 5%;">11 sec</td>
+        </tr>
+      
+        <tr >
+          <td style="width: 45%; text-align: left;">API Tests - Verify the HTTP calls</td>
+          <td style="width: 45%; text-align: left;" class="skipped">Skipped</td>
           <td style="width: 5%; text-align: center;"><a href="http://127.0.0.1:5500/cypress/videos/API.cy.ts.mp4" target="_blank">Video</a></td>
-          <td style="width: 5%;">6 sec</td>
+          <td style="width: 5%;">0.096 sec</td>
+        </tr>
+      
+        <tr >
+          <td style="width: 45%; text-align: left;">Database Tests - Verify if the data is returned from the backend</td>
+          <td style="width: 45%; text-align: left;" class="skipped">Skipped</td>
+          <td style="width: 5%; text-align: center;"><a href="http://127.0.0.1:5500/cypress/videos/Database.cy.ts.mp4" target="_blank">Video</a></td>
+          <td style="width: 5%;">0.138 sec</td>
         </tr>
       
           </tbody>
@@ -105,7 +183,7 @@
       <script>
         document.addEventListener('DOMContentLoaded', function () {
           // Call a function to draw the pie chart
-          drawPieChart(1, 0, 0);
+          drawPieChart(4, 5, 2);
         });
 
         function drawPieChart(pass, fail, skipped) {
