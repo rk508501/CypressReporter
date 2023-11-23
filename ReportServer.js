@@ -22,7 +22,7 @@ module.exports = function () {
 
     const port = process.env.PORT || 5500; // Use an environment variable or a default port
     app.listen(port, () => {
-        console.log(`Server listening on port ${port}`);
+        console.log(`View report at http://127.0.0.1:${port}`);
     });
 
     function replaceSpacesInUrls(url) {

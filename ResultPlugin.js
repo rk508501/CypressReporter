@@ -114,6 +114,7 @@ function generateHTMLReport(result, config) {
         }
       </style>
       <title>${config.title}</title>
+      <link rel="icon" href="/assets/CyLogo.ico">
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
     <body>
@@ -209,9 +210,10 @@ function generateRows(runs) {
 
   for (const run of runs) {
     for (const test of run.tests) {
-      const isFailed = test.state === 'failed';
-      const isSkipped = test.state === 'pending';
-      const isPassed = test.state === 'passed';
+      const isFailed = getStateFromLastJsonObject(test.attempts) === 'failed';
+      const isSkipped = getStateFromLastJsonObject(test.attempts) === 'pending';
+      const isPassed = getStateFromLastJsonObject(test.attempts) === 'passed';
+
       //Enable for shading failed tests red
       //const rowColor = isFailed ? 'style="background-color: #ffcccc;"' : '';
       const rowColor = isFailed ? '' : '';
@@ -225,32 +227,32 @@ function generateRows(runs) {
         statusClass = "passed"
       }
 
-      // Extract just the first line of the error and append error file info
-      let displayError = run.tests[0]?.displayError || 'Pass';
-      displayError = displayError.split("\n")[0];
-      const errorFile = run.tests[0]?.displayError ?
-        getErrorFileInfo(run.tests[0]?.displayError) : "";
-      displayError = displayError + `\n ${errorFile}`;
-
-      //If the status is pending update display text
-      if (test.state === 'pending') {
-        displayError = "Skipped"
+      //----------------------------
+      let runScreenshots = run?.screenshots
+      let screenshotPath
+      if (runScreenshots.length > 0) {
+        screenshotPath = getScreenshotPath(test.title[1], runScreenshots)
       } else {
-        //Test is not skipped
+        screenshotPath = ""
       }
 
-      const actualDuration = run.stats.duration / 1000;
-      const roundedDuration = Math.round(actualDuration);
+      //Set the status to error if the displayError is not undefined, others statuses follow
+      let testStatus = test?.displayError
+      if ((testStatus == null) && (isPassed)) {
+        testStatus = "Pass"
+      } else if (isSkipped) {
+        testStatus = "Skipped"
+      }
 
-      const duration = roundedDuration !== 0 ? roundedDuration : actualDuration;
-      const durationFormatted = `${duration} sec`;
+      //DEBUG row params
+      //console.log(test.title[0] + " :: " + test.title[1] + " :: " + getStateFromLastJsonObject(test.attempts) + " :: " + run.video + " :: " + getShortErrorDescr(testStatus) + " :: " + screenshotPath + " :: " + formatMilliseconds(test.duration));
 
       const videoLink = run.video
         ? `<a href="${convertToLocalUrl(run.video)}" target="_blank">Video</a>`
         : '';
 
-      const screenshotLink = run?.screenshots[0]?.path
-        ? `<a href="${convertToLocalUrl(run?.screenshots[0]?.path)}" target="_blank">Screenshot</a>`
+      const screenshotLink = screenshotPath
+        ? `<a href="${convertToLocalUrl(screenshotPath)}" target="_blank">Screenshot</a>`
         : '';
 
       // Display "Video / Screenshot" and remove slash if there is no screenshot
@@ -260,10 +262,10 @@ function generateRows(runs) {
 
       const row = `
         <tr ${rowColor}>
-          <td style="width: 45%; text-align: left;">${test.title.join(' - ')}</td>
-          <td style="width: 45%; text-align: left;" class="${statusClass}">${displayError}</td>
+          <td style="width: 45%; text-align: left;">${test.title[0] + " :: " + test.title[1]}</td>
+          <td style="width: 45%; text-align: left;" class="${statusClass}">${getShortErrorDescr(testStatus)}</td>
           <td style="width: 5%; text-align: center;">${screenshotAndVideoLink}</td>
-          <td style="width: 5%;">${durationFormatted}</td>
+          <td style="width: 5%;">${formatMilliseconds(test.duration)}</td>
         </tr>
       `;
 
@@ -297,6 +299,39 @@ function generateRows(runs) {
     return match ? match[1] : null;
   }
 
+  function getStateFromLastJsonObject(json) {
+    let lastState = null;
+    for (let obj of json) {
+      if (obj.state) {
+        lastState = obj.state;
+      }
+    }
+    return lastState;
+  }
+
+  function getScreenshotPath(testName, screenshots) {
+    let matchingScreenshotObjs = screenshots.filter(screenshot => {
+      if ((screenshot.path).includes(testName)) {
+        return screenshot.path
+      }
+    })
+    return (matchingScreenshotObjs[matchingScreenshotObjs.length - 1].path);
+  }
+
+  function getShortErrorDescr(errorLog) {
+    const lines = errorLog.split('\n');
+    return lines.slice(0, 2).join('\n');
+  };
+
+  function formatMilliseconds(milliseconds) {
+    const seconds = milliseconds / 1000;
+    const minutes = Math.floor(seconds / 60);
+    const remainderSeconds = Math.ceil(seconds % 60);
+    const formattedMinutes = minutes.toString().padStart(2, "0");
+    const formattedSeconds = remainderSeconds.toString().padStart(2, "0");
+    return `${formattedMinutes} min ${formattedSeconds} sec`;
+  }
+
   return `${failedTests}${passedTests}${skippedTests}`;
 }
 
@@ -323,6 +358,8 @@ module.exports = (on, config) => {
     generateHTMLReport(results, config);
 
     //----------------- START REPORT SERVER ------------------ 
-    //Host a server for viewing the report and screenshots/videos
+    //Host a server for viewing the report and the screenshots/videos
+    // const startServer = require('../../ReportServer.js')
+    // startServer()
   });
 };
