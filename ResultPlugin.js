@@ -251,7 +251,7 @@ function generateRows(runs) {
 
       const row = `
         <tr ${rowColor}>
-          <td style="width: 45%; text-align: left;">${test.title[0] + " : " + test.title[1]}</td>
+          <td style="width: 45%; text-align: left;">[${test.title[0] + "] " + test.title[1]}</td>
           <td style="width: 45%; text-align: center;" class="${statusClass}">${getShortErrorDescr(testStatus)}</td>
           <td style="width: 5%; text-align: center;">${screenshotAndVideoLink}</td>
           <td style="width: 5%;">${formatMilliseconds(test.duration)}</td>
