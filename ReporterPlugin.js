@@ -28,6 +28,7 @@ function generateHTMLReport(result, config) {
   const totalSkipped = result.totalPending || 0;
   const totalTests = result.totalTests || 0;
   const osName = result.osName;
+  const cypressVersion = result.config.version
 
   function parseTestStartTime(dateToParse) {
     const date = new Date(dateToParse);
@@ -53,8 +54,8 @@ function generateHTMLReport(result, config) {
   </nav>
   <div class="container mt-3">
     <div class="navbar-text" style="font-size: medium; color: #888;">
-      Browser: ${result.browserName} - ${result.browserVersion}  |  Platform: ${osName}  |
-      Passed: ${totalPass}  | Failed: ${totalFail} |  Skipped: ${totalSkipped} |
+      Browser: ${result.browserName} - ${result.browserVersion}  |  Cypress Ver: ${cypressVersion}  |
+      Platform OS: ${osName}  |  Passed: ${totalPass}  | Failed: ${totalFail} |  Skipped: ${totalSkipped} |
       Total Tests: ${totalTests}
     </div>
   </div>

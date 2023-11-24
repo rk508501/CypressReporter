@@ -5,11 +5,11 @@ export default defineConfig({
     video:true,
     defaultCommandTimeout:1000,
     retries:{
-      runMode:2,
+      runMode:1,
       openMode:0
     },
     setupNodeEvents(on, config) {
-      require('./ResultPlugin')(on,config)
+      require('./ReporterPlugin')(on,config)
     },
   },
 });
