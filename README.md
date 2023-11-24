@@ -1,16 +1,37 @@
 # CypressReporter
-HTML Reporter Generator for Cypress
 
-Add following to the config file:
+This project is used for generating a HTML report for the Cypress tests (Ver. 13.5 and above)
+
+## Installation
+Clone [https://github.com/rk508501/CypressReporter.git](https://github.com/rk508501/CypressReporter.git)
+
+Do a npm install
+```bash
+npm install
+```
+
+## Usage
+Add the following to the cypress.config(js/ts) file
+```python
 setupNodeEvents(on, config) {
-      require('./ReporterPlugin')(on,config)
+  require('./ReporterPlugin')(on, config)
 }
+```
 
-execute the tests with npx cypress run
+Once all the tests are executed, a HTML file will be generated under TestReport folder (at the project root level)
 
-once the execution is done, HTML report can be found under TestReport directory at the project root level.
+In order to view the report, launch a web server using the ReporterServer.js module. 
 
-run node ReportServer.js and report will be served at http://127.0.0.1:8080
-(have to use a server since the screenshot/video files are blocked by the browsers)
+```python
+node ReporterServer.js
+```
+The report can be viewed at http://127.0.0.1:8080
 
-A sample report screenshot: https://github.com/rk508501/CypressReporter/blob/main/assets/Sample_Report.png
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first.
+to discuss what you would like to change.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
