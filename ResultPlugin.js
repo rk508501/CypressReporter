@@ -227,15 +227,6 @@ function generateRows(runs) {
         statusClass = "passed"
       }
 
-      //----------------------------
-      let runScreenshots = run?.screenshots
-      let screenshotPath
-      if (runScreenshots.length > 0) {
-        screenshotPath = getScreenshotPath(test.title[1], runScreenshots)
-      } else {
-        screenshotPath = ""
-      }
-
       //Set the status to error if the displayError is not undefined, others statuses follow
       let testStatus = test?.displayError
       if ((testStatus == null) && (isPassed)) {
@@ -244,13 +235,11 @@ function generateRows(runs) {
         testStatus = "Skipped"
       }
 
-      //DEBUG row params
-      //console.log(test.title[0] + " :: " + test.title[1] + " :: " + getStateFromLastJsonObject(test.attempts) + " :: " + run.video + " :: " + getShortErrorDescr(testStatus) + " :: " + screenshotPath + " :: " + formatMilliseconds(test.duration));
-
       const videoLink = run.video
         ? `<a href="${convertToLocalUrl(run.video)}" target="_blank">Video</a>`
         : '';
 
+      let screenshotPath = getScreenshotLink(test.title[1])
       const screenshotLink = screenshotPath
         ? `<a href="${convertToLocalUrl(screenshotPath)}" target="_blank">Screenshot</a>`
         : '';
@@ -262,8 +251,8 @@ function generateRows(runs) {
 
       const row = `
         <tr ${rowColor}>
-          <td style="width: 45%; text-align: left;">${test.title[0] + " :: " + test.title[1]}</td>
-          <td style="width: 45%; text-align: left;" class="${statusClass}">${getShortErrorDescr(testStatus)}</td>
+          <td style="width: 45%; text-align: left;">${test.title[0] + " : " + test.title[1]}</td>
+          <td style="width: 45%; text-align: center;" class="${statusClass}">${getShortErrorDescr(testStatus)}</td>
           <td style="width: 5%; text-align: center;">${screenshotAndVideoLink}</td>
           <td style="width: 5%;">${formatMilliseconds(test.duration)}</td>
         </tr>
@@ -279,7 +268,7 @@ function generateRows(runs) {
     }
   }
 
-  function convertToLocalUrl(filePath, port = 5500) {
+  function convertToLocalUrl(filePath, port = 8080) {
     // Assuming the videos are served from the root of the server
     const baseUrl = `http://127.0.0.1:${port}`;
 
@@ -309,13 +298,44 @@ function generateRows(runs) {
     return lastState;
   }
 
-  function getScreenshotPath(testName, screenshots) {
-    let matchingScreenshotObjs = screenshots.filter(screenshot => {
-      if ((screenshot.path).includes(testName)) {
-        return screenshot.path
+  function extractPngLinks(obj) {
+    let pngLinks = [];
+
+    for (const key in obj) {
+      if (obj.hasOwnProperty(key)) {
+        const value = obj[key];
+
+        if (typeof value === 'object') {
+          // Recursively search for .png links in nested objects
+          pngLinks = pngLinks.concat(extractPngLinks(value));
+        } else if (typeof value === 'string' && value.endsWith('.png')) {
+          // Check if the string ends with .png and add it to the list
+          pngLinks.push(value);
+        }
       }
+    }
+    return pngLinks;
+  }
+
+  // Print the extracted PNG links
+  function getScreenshotLink(testName) {
+    let pngLinks = extractPngLinks(runs)
+    console.log("DEBUG total scr links " + pngLinks.length)
+
+    console.log("Searching for the testName " + testName);
+    let searchResultsForScreenshot = pngLinks.filter(link => {
+      return link.includes(testName)
     })
-    return (matchingScreenshotObjs[matchingScreenshotObjs.length - 1].path);
+    return getLastElement(searchResultsForScreenshot)
+  }
+
+  function getLastElement(arr) {
+    // Check if the array is not empty
+    if (arr && arr.length > 0) {
+      return arr[arr.length - 1]; // Return the last element
+    } else {
+      return undefined; // Return undefined for empty arrays
+    }
   }
 
   function getShortErrorDescr(errorLog) {
@@ -356,10 +376,5 @@ module.exports = (on, config) => {
 
     const config = readConfig();
     generateHTMLReport(results, config);
-
-    //----------------- START REPORT SERVER ------------------ 
-    //Host a server for viewing the report and the screenshots/videos
-    // const startServer = require('../../ReportServer.js')
-    // startServer()
   });
 };
