@@ -34,8 +34,6 @@ A sample report screenshot can be found here:
 
 [Image of a sample report screenshot](https://github.com/rk508501/CypressReporter/blob/main/assets/Sample_Report.png)
 
-![Sample Report]([http://full/path/to/img.jpg](https://github.com/rk508501/CypressReporter/blob/main/assets/Sample_Report.png) "Sample Report Screenshot")
-
 
 ## Contributing
 
