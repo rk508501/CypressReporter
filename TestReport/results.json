@@ -9,7 +9,7 @@
       "runMode": 1,
       "openMode": 0
     },
-    "projectRoot": "/Users/garu/Downloads/CypressReporter",
+    "projectRoot": "C:\\Automation\\CypressReporter",
     "projectName": "CypressReporter",
     "configFile": "cypress.config.ts",
     "isTextTerminal": true,
@@ -19,7 +19,7 @@
     "blockHosts": null,
     "chromeWebSecurity": true,
     "clientCertificates": [],
-    "downloadsFolder": "/Users/garu/Downloads/CypressReporter/cypress/downloads",
+    "downloadsFolder": "C:\\Automation\\CypressReporter\\cypress\\downloads",
     "env": {},
     "execTimeout": 60000,
     "experimentalCspAllowList": false,
@@ -34,35 +34,35 @@
     "experimentalSingleTabRunMode": false,
     "experimentalStudio": false,
     "experimentalWebKitSupport": false,
-    "fileServerFolder": "/Users/garu/Downloads/CypressReporter",
-    "fixturesFolder": "/Users/garu/Downloads/CypressReporter/cypress/fixtures",
+    "fileServerFolder": "C:\\Automation\\CypressReporter",
+    "fixturesFolder": "C:\\Automation\\CypressReporter\\cypress\\fixtures",
     "excludeSpecPattern": "*.hot-update.js",
     "includeShadowDom": false,
     "keystrokeDelay": 0,
     "modifyObstructiveCode": true,
     "numTestsKeptInMemory": 0,
-    "platform": "darwin",
+    "platform": "win32",
     "pageLoadTimeout": 60000,
-    "port": 54588,
+    "port": 54027,
     "projectId": null,
     "redirectionLimit": 20,
     "reporter": "spec",
     "reporterOptions": null,
     "requestTimeout": 5000,
-    "resolvedNodePath": "/usr/local/bin/node",
-    "resolvedNodeVersion": "18.17.0",
+    "resolvedNodePath": "C:\\Program Files (x86)\\nodejs\\node.exe",
+    "resolvedNodeVersion": "18.16.1",
     "responseTimeout": 30000,
     "screenshotOnRunFailure": true,
-    "screenshotsFolder": "/Users/garu/Downloads/CypressReporter/cypress/screenshots",
+    "screenshotsFolder": "C:\\Automation\\CypressReporter\\cypress\\screenshots",
     "slowTestThreshold": 10000,
     "scrollBehavior": "top",
-    "supportFile": "/Users/garu/Downloads/CypressReporter/cypress/support/e2e.ts",
+    "supportFile": "C:\\Automation\\CypressReporter\\cypress\\support\\e2e.ts",
     "taskTimeout": 60000,
     "testIsolation": true,
     "trashAssetsBeforeRuns": true,
     "userAgent": null,
     "videoCompression": false,
-    "videosFolder": "/Users/garu/Downloads/CypressReporter/cypress/videos",
+    "videosFolder": "C:\\Automation\\CypressReporter\\cypress\\videos",
     "viewportHeight": 660,
     "viewportWidth": 1000,
     "waitForAnimations": true,
@@ -75,17 +75,17 @@
         "family": "chromium",
         "majorVersion": "119",
         "name": "chrome",
-        "path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
-        "version": "119.0.6045.159"
+        "path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "version": "119.0.6045.160"
       },
       {
         "channel": "stable",
-        "displayName": "Firefox",
-        "family": "firefox",
-        "majorVersion": "120",
-        "name": "firefox",
-        "path": "/Applications/Firefox.app/Contents/MacOS/firefox",
-        "version": "120.0"
+        "displayName": "Edge",
+        "family": "chromium",
+        "majorVersion": "119",
+        "name": "edge",
+        "path": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+        "version": "119.0.2151.72"
       },
       {
         "channel": "stable",
@@ -97,7 +97,7 @@
         "version": "114.0.5735.289"
       }
     ],
-    "cypressBinaryRoot": "/Users/garu/Library/Caches/Cypress/13.5.0/Cypress.app/Contents/Resources/app",
+    "cypressBinaryRoot": "C:\\Users\\kulka\\AppData\\Local\\Cypress\\Cache\\13.5.0\\Cypress\\resources\\app",
     "hosts": null,
     "isInteractive": true,
     "version": "13.5.0",
@@ -106,142 +106,10 @@
     "cypressInternalEnv": "production"
   },
   "cypressVersion": "13.5.0",
-  "endedTestsAt": "2023-11-24T20:22:56.791Z",
-  "osName": "darwin",
-  "osVersion": "21.6.0",
+  "endedTestsAt": "2023-11-25T02:20:16.193Z",
+  "osName": "win32",
+  "osVersion": "10.0.19045",
   "runs": [
-    {
-      "error": null,
-      "reporter": "spec",
-      "reporterStats": {
-        "suites": 1,
-        "tests": 1,
-        "passes": 0,
-        "pending": 1,
-        "failures": 0,
-        "start": "2023-11-24T20:20:56.765Z",
-        "end": "2023-11-24T20:20:57.078Z",
-        "duration": 313
-      },
-      "screenshots": [],
-      "spec": {
-        "absolute": "/Users/garu/Downloads/CypressReporter/cypress/e2e/API.cy.ts",
-        "fileExtension": ".ts",
-        "fileName": "API",
-        "name": "API.cy.ts",
-        "relative": "cypress/e2e/API.cy.ts"
-      },
-      "stats": {
-        "duration": 305,
-        "endedAt": "2023-11-24T20:20:57.057Z",
-        "failures": 0,
-        "passes": 0,
-        "pending": 1,
-        "skipped": 0,
-        "startedAt": "2023-11-24T20:20:56.752Z",
-        "suites": 1,
-        "tests": 1
-      },
-      "tests": [
-        {
-          "attempts": [
-            {
-              "state": "pending"
-            }
-          ],
-          "displayError": null,
-          "duration": 247,
-          "state": "pending",
-          "title": [
-            "API Tests",
-            "Verify the HTTP calls"
-          ]
-        }
-      ],
-      "video": "/Users/garu/Downloads/CypressReporter/cypress/videos/API.cy.ts.mp4"
-    },
-    {
-      "error": null,
-      "reporter": "spec",
-      "reporterStats": {
-        "suites": 1,
-        "tests": 1,
-        "passes": 0,
-        "pending": 0,
-        "failures": 1,
-        "start": "2023-11-24T20:21:02.012Z",
-        "end": "2023-11-24T20:21:18.658Z",
-        "duration": 16646
-      },
-      "screenshots": [
-        {
-          "height": 720,
-          "name": null,
-          "path": "/Users/garu/Downloads/CypressReporter/cypress/screenshots/Billing.cy.ts/Billing Page Tests -- Verify the billing methods (failed).png",
-          "takenAt": "2023-11-24T20:21:10.636Z",
-          "width": 1280
-        },
-        {
-          "height": 660,
-          "name": null,
-          "path": "/Users/garu/Downloads/CypressReporter/cypress/screenshots/Billing.cy.ts/Verify the billing methods -- after each hook.png",
-          "takenAt": "2023-11-24T20:21:11.160Z",
-          "width": 1000
-        },
-        {
-          "height": 720,
-          "name": null,
-          "path": "/Users/garu/Downloads/CypressReporter/cypress/screenshots/Billing.cy.ts/Billing Page Tests -- Verify the billing methods (failed) (attempt 2).png",
-          "takenAt": "2023-11-24T20:21:16.529Z",
-          "width": 1280
-        },
-        {
-          "height": 660,
-          "name": null,
-          "path": "/Users/garu/Downloads/CypressReporter/cypress/screenshots/Billing.cy.ts/Verify the billing methods -- after each hook (attempt 2).png",
-          "takenAt": "2023-11-24T20:21:17.291Z",
-          "width": 1000
-        }
-      ],
-      "spec": {
-        "absolute": "/Users/garu/Downloads/CypressReporter/cypress/e2e/Billing.cy.ts",
-        "fileExtension": ".ts",
-        "fileName": "Billing",
-        "name": "Billing.cy.ts",
-        "relative": "cypress/e2e/Billing.cy.ts"
-      },
-      "stats": {
-        "duration": 16653,
-        "endedAt": "2023-11-24T20:21:18.648Z",
-        "failures": 1,
-        "passes": 0,
-        "pending": 0,
-        "skipped": 0,
-        "startedAt": "2023-11-24T20:21:01.995Z",
-        "suites": 1,
-        "tests": 1
-      },
-      "tests": [
-        {
-          "attempts": [
-            {
-              "state": "failed"
-            },
-            {
-              "state": "failed"
-            }
-          ],
-          "displayError": "AssertionError: Timed out retrying after 10ms: Expected to find content: 'Non Existent' but never did.\n    at Context.eval (webpack://cypress_ts/./cypress/e2e/Billing.cy.ts:5:51)",
-          "duration": 12064,
-          "state": "failed",
-          "title": [
-            "Billing Page Tests",
-            "Verify the billing methods"
-          ]
-        }
-      ],
-      "video": "/Users/garu/Downloads/CypressReporter/cypress/videos/Billing.cy.ts.mp4"
-    },
     {
       "error": null,
       "reporter": "spec",
@@ -251,76 +119,76 @@
         "passes": 3,
         "pending": 0,
         "failures": 1,
-        "start": "2023-11-24T20:21:23.701Z",
-        "end": "2023-11-24T20:21:54.154Z",
-        "duration": 30453
+        "start": "2023-11-25T02:20:05.730Z",
+        "end": "2023-11-25T02:20:09.259Z",
+        "duration": 3529
       },
       "screenshots": [
         {
-          "height": 2724,
+          "height": 660,
           "name": null,
-          "path": "/Users/garu/Downloads/CypressReporter/cypress/screenshots/Checkout.cy.ts/Checkout Happy Test 1 -- after each hook.png",
-          "takenAt": "2023-11-24T20:21:31.977Z",
+          "path": "C:\\Automation\\CypressReporter\\cypress\\screenshots\\testA.cy.ts\\Test A A -- after each hook.png",
+          "takenAt": "2023-11-25T02:20:05.819Z",
           "width": 1000
         },
         {
-          "height": 2365,
+          "height": 660,
           "name": null,
-          "path": "/Users/garu/Downloads/CypressReporter/cypress/screenshots/Checkout.cy.ts/Checkout Happy Test 2 -- after each hook.png",
-          "takenAt": "2023-11-24T20:21:41.642Z",
+          "path": "C:\\Automation\\CypressReporter\\cypress\\screenshots\\testA.cy.ts\\Test A B -- after each hook.png",
+          "takenAt": "2023-11-25T02:20:06.342Z",
           "width": 1000
         },
         {
-          "height": 2002,
+          "height": 660,
           "name": null,
-          "path": "/Users/garu/Downloads/CypressReporter/cypress/screenshots/Checkout.cy.ts/Checkout Happy Test 3 -- after each hook.png",
-          "takenAt": "2023-11-24T20:21:48.880Z",
+          "path": "C:\\Automation\\CypressReporter\\cypress\\screenshots\\testA.cy.ts\\Test A C -- after each hook.png",
+          "takenAt": "2023-11-25T02:20:06.776Z",
           "width": 1000
         },
         {
           "height": 720,
           "name": null,
-          "path": "/Users/garu/Downloads/CypressReporter/cypress/screenshots/Checkout.cy.ts/Checkout tests -- Checkout Happy Test 4 (failed).png",
-          "takenAt": "2023-11-24T20:21:51.545Z",
+          "path": "C:\\Automation\\CypressReporter\\cypress\\screenshots\\testA.cy.ts\\Suite A -- Test A D (failed).png",
+          "takenAt": "2023-11-25T02:20:07.437Z",
           "width": 1280
         },
         {
           "height": 660,
           "name": null,
-          "path": "/Users/garu/Downloads/CypressReporter/cypress/screenshots/Checkout.cy.ts/Checkout Happy Test 4 -- after each hook.png",
-          "takenAt": "2023-11-24T20:21:52.215Z",
+          "path": "C:\\Automation\\CypressReporter\\cypress\\screenshots\\testA.cy.ts\\Test A D -- after each hook.png",
+          "takenAt": "2023-11-25T02:20:07.684Z",
           "width": 1000
         },
         {
           "height": 720,
           "name": null,
-          "path": "/Users/garu/Downloads/CypressReporter/cypress/screenshots/Checkout.cy.ts/Checkout tests -- Checkout Happy Test 4 (failed) (attempt 2).png",
-          "takenAt": "2023-11-24T20:21:53.105Z",
+          "path": "C:\\Automation\\CypressReporter\\cypress\\screenshots\\testA.cy.ts\\Suite A -- Test A D (failed) (attempt 2).png",
+          "takenAt": "2023-11-25T02:20:08.158Z",
           "width": 1280
         },
         {
           "height": 660,
           "name": null,
-          "path": "/Users/garu/Downloads/CypressReporter/cypress/screenshots/Checkout.cy.ts/Checkout Happy Test 4 -- after each hook (attempt 2).png",
-          "takenAt": "2023-11-24T20:21:53.500Z",
+          "path": "C:\\Automation\\CypressReporter\\cypress\\screenshots\\testA.cy.ts\\Test A D -- after each hook (attempt 2).png",
+          "takenAt": "2023-11-25T02:20:08.783Z",
           "width": 1000
         }
       ],
       "spec": {
-        "absolute": "/Users/garu/Downloads/CypressReporter/cypress/e2e/Checkout.cy.ts",
+        "absolute": "C:/Automation/CypressReporter/cypress/e2e/smoke/testA.cy.ts",
         "fileExtension": ".ts",
-        "fileName": "Checkout",
-        "name": "Checkout.cy.ts",
-        "relative": "cypress/e2e/Checkout.cy.ts"
+        "fileName": "testA",
+        "name": "testA.cy.ts",
+        "relative": "cypress\\e2e\\smoke\\testA.cy.ts"
       },
       "stats": {
-        "duration": 30445,
-        "endedAt": "2023-11-24T20:21:54.130Z",
+        "duration": 3534,
+        "endedAt": "2023-11-25T02:20:09.266Z",
         "failures": 1,
         "passes": 3,
         "pending": 0,
         "skipped": 0,
-        "startedAt": "2023-11-24T20:21:23.685Z",
+        "startedAt": "2023-11-25T02:20:05.732Z",
         "suites": 1,
         "tests": 4
       },
@@ -332,11 +200,11 @@
             }
           ],
           "displayError": null,
-          "duration": 6583,
+          "duration": 551,
           "state": "passed",
           "title": [
-            "Checkout tests",
-            "Checkout Happy Test 1"
+            "Suite A",
+            "Test A A"
           ]
         },
         {
@@ -346,11 +214,11 @@
             }
           ],
           "displayError": null,
-          "duration": 6175,
+          "duration": 425,
           "state": "passed",
           "title": [
-            "Checkout tests",
-            "Checkout Happy Test 2"
+            "Suite A",
+            "Test A B"
           ]
         },
         {
@@ -360,11 +228,11 @@
             }
           ],
           "displayError": null,
-          "duration": 7795,
+          "duration": 471,
           "state": "passed",
           "title": [
-            "Checkout tests",
-            "Checkout Happy Test 3"
+            "Suite A",
+            "Test A C"
           ]
         },
         {
@@ -376,50 +244,138 @@
               "state": "failed"
             }
           ],
-          "displayError": "AssertionError: expected true to be false\n    at Context.eval (webpack://cypress_ts/./cypress/e2e/Checkout.cy.ts:34:0)",
-          "duration": 2808,
+          "displayError": "AssertionError: expected true to be false\n    at Context.eval (webpack://cypress_ts/./cypress/e2e/smoke/testA.cy.ts:16:0)",
+          "duration": 1890,
           "state": "failed",
           "title": [
-            "Checkout tests",
-            "Checkout Happy Test 4"
+            "Suite A",
+            "Test A D"
           ]
         }
       ],
-      "video": "/Users/garu/Downloads/CypressReporter/cypress/videos/Checkout.cy.ts.mp4"
+      "video": "C:\\Automation\\CypressReporter\\cypress\\videos\\testA.cy.ts.mp4"
     },
     {
       "error": null,
       "reporter": "spec",
       "reporterStats": {
         "suites": 1,
-        "tests": 1,
-        "passes": 0,
+        "tests": 4,
+        "passes": 2,
         "pending": 1,
-        "failures": 0,
-        "start": "2023-11-24T20:21:59.210Z",
-        "end": "2023-11-24T20:21:59.494Z",
-        "duration": 284
+        "failures": 1,
+        "start": "2023-11-25T02:20:13.596Z",
+        "end": "2023-11-25T02:20:16.198Z",
+        "duration": 2602
       },
-      "screenshots": [],
+      "screenshots": [
+        {
+          "height": 660,
+          "name": null,
+          "path": "C:\\Automation\\CypressReporter\\cypress\\screenshots\\testC.cy.ts\\Test C A -- after each hook.png",
+          "takenAt": "2023-11-25T02:20:13.672Z",
+          "width": 1000
+        },
+        {
+          "height": 720,
+          "name": null,
+          "path": "C:\\Automation\\CypressReporter\\cypress\\screenshots\\testC.cy.ts\\Suite C -- Test C B (failed).png",
+          "takenAt": "2023-11-25T02:20:14.118Z",
+          "width": 1280
+        },
+        {
+          "height": 660,
+          "name": null,
+          "path": "C:\\Automation\\CypressReporter\\cypress\\screenshots\\testC.cy.ts\\Test C B -- after each hook.png",
+          "takenAt": "2023-11-25T02:20:14.306Z",
+          "width": 1000
+        },
+        {
+          "height": 720,
+          "name": null,
+          "path": "C:\\Automation\\CypressReporter\\cypress\\screenshots\\testC.cy.ts\\Suite C -- Test C B (failed) (attempt 2).png",
+          "takenAt": "2023-11-25T02:20:14.808Z",
+          "width": 1280
+        },
+        {
+          "height": 660,
+          "name": null,
+          "path": "C:\\Automation\\CypressReporter\\cypress\\screenshots\\testC.cy.ts\\Test C B -- after each hook (attempt 2).png",
+          "takenAt": "2023-11-25T02:20:15.198Z",
+          "width": 1000
+        },
+        {
+          "height": 660,
+          "name": null,
+          "path": "C:\\Automation\\CypressReporter\\cypress\\screenshots\\testC.cy.ts\\Test C C -- after each hook.png",
+          "takenAt": "2023-11-25T02:20:15.667Z",
+          "width": 1000
+        }
+      ],
       "spec": {
-        "absolute": "/Users/garu/Downloads/CypressReporter/cypress/e2e/Database.cy.ts",
+        "absolute": "C:/Automation/CypressReporter/cypress/e2e/smoke/testC.cy.ts",
         "fileExtension": ".ts",
-        "fileName": "Database",
-        "name": "Database.cy.ts",
-        "relative": "cypress/e2e/Database.cy.ts"
+        "fileName": "testC",
+        "name": "testC.cy.ts",
+        "relative": "cypress\\e2e\\smoke\\testC.cy.ts"
       },
       "stats": {
-        "duration": 256,
-        "endedAt": "2023-11-24T20:21:59.449Z",
-        "failures": 0,
-        "passes": 0,
+        "duration": 2603,
+        "endedAt": "2023-11-25T02:20:16.193Z",
+        "failures": 1,
+        "passes": 2,
         "pending": 1,
         "skipped": 0,
-        "startedAt": "2023-11-24T20:21:59.193Z",
+        "startedAt": "2023-11-25T02:20:13.590Z",
         "suites": 1,
-        "tests": 1
+        "tests": 4
       },
       "tests": [
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 466,
+          "state": "passed",
+          "title": [
+            "Suite C",
+            "Test C A"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "failed"
+            },
+            {
+              "state": "failed"
+            }
+          ],
+          "displayError": "AssertionError: expected true to be false\n    at Context.eval (webpack://cypress_ts/./cypress/e2e/smoke/testC.cy.ts:8:0)",
+          "duration": 1437,
+          "state": "failed",
+          "title": [
+            "Suite C",
+            "Test C B"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 549,
+          "state": "passed",
+          "title": [
+            "Suite C",
+            "Test C C"
+          ]
+        },
         {
           "attempts": [
             {
@@ -427,311 +383,23 @@
             }
           ],
           "displayError": null,
-          "duration": 222,
+          "duration": 0,
           "state": "pending",
           "title": [
-            "Database Tests",
-            "Verify if the data is returned from the backend"
+            "Suite C",
+            "Test C D"
           ]
         }
       ],
-      "video": "/Users/garu/Downloads/CypressReporter/cypress/videos/Database.cy.ts.mp4"
-    },
-    {
-      "error": null,
-      "reporter": "spec",
-      "reporterStats": {
-        "suites": 1,
-        "tests": 1,
-        "passes": 0,
-        "pending": 0,
-        "failures": 1,
-        "start": "2023-11-24T20:22:03.377Z",
-        "end": "2023-11-24T20:22:16.756Z",
-        "duration": 13379
-      },
-      "screenshots": [
-        {
-          "height": 720,
-          "name": null,
-          "path": "/Users/garu/Downloads/CypressReporter/cypress/screenshots/Landing.cy.ts/Landing Page Tests -- Verify the landing page elements (failed).png",
-          "takenAt": "2023-11-24T20:22:10.429Z",
-          "width": 1280
-        },
-        {
-          "height": 660,
-          "name": null,
-          "path": "/Users/garu/Downloads/CypressReporter/cypress/screenshots/Landing.cy.ts/Verify the landing page elements -- after each hook.png",
-          "takenAt": "2023-11-24T20:22:10.743Z",
-          "width": 1000
-        },
-        {
-          "height": 720,
-          "name": null,
-          "path": "/Users/garu/Downloads/CypressReporter/cypress/screenshots/Landing.cy.ts/Landing Page Tests -- Verify the landing page elements (failed) (attempt 2).png",
-          "takenAt": "2023-11-24T20:22:14.877Z",
-          "width": 1280
-        },
-        {
-          "height": 660,
-          "name": null,
-          "path": "/Users/garu/Downloads/CypressReporter/cypress/screenshots/Landing.cy.ts/Verify the landing page elements -- after each hook (attempt 2).png",
-          "takenAt": "2023-11-24T20:22:15.474Z",
-          "width": 1000
-        }
-      ],
-      "spec": {
-        "absolute": "/Users/garu/Downloads/CypressReporter/cypress/e2e/Landing.cy.ts",
-        "fileExtension": ".ts",
-        "fileName": "Landing",
-        "name": "Landing.cy.ts",
-        "relative": "cypress/e2e/Landing.cy.ts"
-      },
-      "stats": {
-        "duration": 13365,
-        "endedAt": "2023-11-24T20:22:16.730Z",
-        "failures": 1,
-        "passes": 0,
-        "pending": 0,
-        "skipped": 0,
-        "startedAt": "2023-11-24T20:22:03.365Z",
-        "suites": 1,
-        "tests": 1
-      },
-      "tests": [
-        {
-          "attempts": [
-            {
-              "state": "failed"
-            },
-            {
-              "state": "failed"
-            }
-          ],
-          "displayError": "AssertionError: Timed out retrying after 10ms: Expected to find content: 'Non Existent' but never did.\n    at Context.eval (webpack://cypress_ts/./cypress/e2e/Landing.cy.ts:5:51)",
-          "duration": 10167,
-          "state": "failed",
-          "title": [
-            "Landing Page Tests",
-            "Verify the landing page elements"
-          ]
-        }
-      ],
-      "video": "/Users/garu/Downloads/CypressReporter/cypress/videos/Landing.cy.ts.mp4"
-    },
-    {
-      "error": null,
-      "reporter": "spec",
-      "reporterStats": {
-        "suites": 1,
-        "tests": 2,
-        "passes": 1,
-        "pending": 0,
-        "failures": 1,
-        "start": "2023-11-24T20:22:21.679Z",
-        "end": "2023-11-24T20:22:36.577Z",
-        "duration": 14898
-      },
-      "screenshots": [
-        {
-          "height": 720,
-          "name": null,
-          "path": "/Users/garu/Downloads/CypressReporter/cypress/screenshots/Login.cy.ts/Login Tests -- Verify the login tests (failed).png",
-          "takenAt": "2023-11-24T20:22:27.873Z",
-          "width": 1280
-        },
-        {
-          "height": 660,
-          "name": null,
-          "path": "/Users/garu/Downloads/CypressReporter/cypress/screenshots/Login.cy.ts/Verify the login tests -- after each hook.png",
-          "takenAt": "2023-11-24T20:22:28.165Z",
-          "width": 1000
-        },
-        {
-          "height": 660,
-          "name": null,
-          "path": "/Users/garu/Downloads/CypressReporter/cypress/screenshots/Login.cy.ts/Verify the login tests -- after each hook (1).png",
-          "takenAt": "2023-11-24T20:22:28.645Z",
-          "width": 1000
-        },
-        {
-          "height": 720,
-          "name": null,
-          "path": "/Users/garu/Downloads/CypressReporter/cypress/screenshots/Login.cy.ts/Login Tests -- Verify the login tests (failed) (attempt 2).png",
-          "takenAt": "2023-11-24T20:22:32.739Z",
-          "width": 1280
-        },
-        {
-          "height": 660,
-          "name": null,
-          "path": "/Users/garu/Downloads/CypressReporter/cypress/screenshots/Login.cy.ts/Verify the login tests -- after each hook (attempt 2).png",
-          "takenAt": "2023-11-24T20:22:32.977Z",
-          "width": 1000
-        },
-        {
-          "height": 660,
-          "name": null,
-          "path": "/Users/garu/Downloads/CypressReporter/cypress/screenshots/Login.cy.ts/Verify the login tests -- after each hook (attempt 2) (1).png",
-          "takenAt": "2023-11-24T20:22:33.494Z",
-          "width": 1000
-        },
-        {
-          "height": 660,
-          "name": null,
-          "path": "/Users/garu/Downloads/CypressReporter/cypress/screenshots/Login.cy.ts/UUID Test -- after each hook.png",
-          "takenAt": "2023-11-24T20:22:34.367Z",
-          "width": 1000
-        },
-        {
-          "height": 660,
-          "name": null,
-          "path": "/Users/garu/Downloads/CypressReporter/cypress/screenshots/Login.cy.ts/UUID Test -- after each hook (1).png",
-          "takenAt": "2023-11-24T20:22:35.102Z",
-          "width": 1000
-        }
-      ],
-      "spec": {
-        "absolute": "/Users/garu/Downloads/CypressReporter/cypress/e2e/Login.cy.ts",
-        "fileExtension": ".ts",
-        "fileName": "Login",
-        "name": "Login.cy.ts",
-        "relative": "cypress/e2e/Login.cy.ts"
-      },
-      "stats": {
-        "duration": 14894,
-        "endedAt": "2023-11-24T20:22:36.564Z",
-        "failures": 1,
-        "passes": 1,
-        "pending": 0,
-        "skipped": 0,
-        "startedAt": "2023-11-24T20:22:21.670Z",
-        "suites": 1,
-        "tests": 2
-      },
-      "tests": [
-        {
-          "attempts": [
-            {
-              "state": "failed"
-            },
-            {
-              "state": "failed"
-            }
-          ],
-          "displayError": "AssertionError: Timed out retrying after 10ms: Expected to find content: 'Non Existent' but never did.\n    at Context.eval (webpack://cypress_ts/./cypress/e2e/Login.cy.ts:8:51)",
-          "duration": 9194,
-          "state": "failed",
-          "title": [
-            "Login Tests",
-            "Verify the login tests"
-          ]
-        },
-        {
-          "attempts": [
-            {
-              "state": "passed"
-            }
-          ],
-          "displayError": null,
-          "duration": 2329,
-          "state": "passed",
-          "title": [
-            "Login Tests",
-            "UUID Test"
-          ]
-        }
-      ],
-      "video": "/Users/garu/Downloads/CypressReporter/cypress/videos/Login.cy.ts.mp4"
-    },
-    {
-      "error": null,
-      "reporter": "spec",
-      "reporterStats": {
-        "suites": 1,
-        "tests": 1,
-        "passes": 0,
-        "pending": 0,
-        "failures": 1,
-        "start": "2023-11-24T20:22:41.979Z",
-        "end": "2023-11-24T20:22:56.803Z",
-        "duration": 14824
-      },
-      "screenshots": [
-        {
-          "height": 720,
-          "name": null,
-          "path": "/Users/garu/Downloads/CypressReporter/cypress/screenshots/Transactions.cy.ts/Transaction Tests -- Verify the transactions (failed).png",
-          "takenAt": "2023-11-24T20:22:48.407Z",
-          "width": 1280
-        },
-        {
-          "height": 660,
-          "name": null,
-          "path": "/Users/garu/Downloads/CypressReporter/cypress/screenshots/Transactions.cy.ts/Verify the transactions -- after each hook.png",
-          "takenAt": "2023-11-24T20:22:48.878Z",
-          "width": 1000
-        },
-        {
-          "height": 720,
-          "name": null,
-          "path": "/Users/garu/Downloads/CypressReporter/cypress/screenshots/Transactions.cy.ts/Transaction Tests -- Verify the transactions (failed) (attempt 2).png",
-          "takenAt": "2023-11-24T20:22:54.831Z",
-          "width": 1280
-        },
-        {
-          "height": 660,
-          "name": null,
-          "path": "/Users/garu/Downloads/CypressReporter/cypress/screenshots/Transactions.cy.ts/Verify the transactions -- after each hook (attempt 2).png",
-          "takenAt": "2023-11-24T20:22:55.596Z",
-          "width": 1000
-        }
-      ],
-      "spec": {
-        "absolute": "/Users/garu/Downloads/CypressReporter/cypress/e2e/Transactions.cy.ts",
-        "fileExtension": ".ts",
-        "fileName": "Transactions",
-        "name": "Transactions.cy.ts",
-        "relative": "cypress/e2e/Transactions.cy.ts"
-      },
-      "stats": {
-        "duration": 14821,
-        "endedAt": "2023-11-24T20:22:56.791Z",
-        "failures": 1,
-        "passes": 0,
-        "pending": 0,
-        "skipped": 0,
-        "startedAt": "2023-11-24T20:22:41.970Z",
-        "suites": 1,
-        "tests": 1
-      },
-      "tests": [
-        {
-          "attempts": [
-            {
-              "state": "failed"
-            },
-            {
-              "state": "failed"
-            }
-          ],
-          "displayError": "AssertionError: Timed out retrying after 10ms: Expected to find content: 'Non Existent' but never did.\n    at Context.eval (webpack://cypress_ts/./cypress/e2e/Transactions.cy.ts:5:51)",
-          "duration": 11341,
-          "state": "failed",
-          "title": [
-            "Transaction Tests",
-            "Verify the transactions"
-          ]
-        }
-      ],
-      "video": "/Users/garu/Downloads/CypressReporter/cypress/videos/Transactions.cy.ts.mp4"
+      "video": "C:\\Automation\\CypressReporter\\cypress\\videos\\testC.cy.ts.mp4"
     }
   ],
-  "startedTestsAt": "2023-11-24T20:20:56.752Z",
-  "totalDuration": 90739,
-  "totalFailed": 5,
-  "totalPassed": 4,
-  "totalPending": 2,
+  "startedTestsAt": "2023-11-25T02:20:05.732Z",
+  "totalDuration": 6137,
+  "totalFailed": 2,
+  "totalPassed": 5,
+  "totalPending": 1,
   "totalSkipped": 0,
-  "totalSuites": 7,
-  "totalTests": 11
+  "totalSuites": 2,
+  "totalTests": 8
 }

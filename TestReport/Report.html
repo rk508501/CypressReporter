@@ -22,7 +22,7 @@
           color: #FEBE10;
         }
       </style>
-      <title>Test Automation Report</title>
+      <title>My Test Automation Report</title>
       <link rel="icon" href="/assets/CyLogo.ico">
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
@@ -30,13 +30,13 @@
       
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <img src="https://user-images.githubusercontent.com/2801156/153322291-8b186487-5127-48f7-aa6d-b0ef350f8575.png" alt="Logo" class="mr-2" style="height: 30px;">
-    <span class="navbar-brand mb-0 h1">Test Automation Report</span>
+    <span class="navbar-brand mb-0 h1">My Test Automation Report</span>
   </nav>
   <div class="container mt-3">
     <div class="navbar-text" style="font-size: medium; color: #888;">
       Browser: electron - 114.0.5735.289  |  Cypress Ver: 13.5.0  |
-      Platform OS: darwin  |  Passed: 4  | Failed: 5 |  Skipped: 2 |
-      Total Tests: 11
+      Platform OS: win32  |  Passed: 5  | Failed: 2 |  Skipped: 1 |
+      Total Tests: 8
     </div>
   </div>
 
@@ -54,23 +54,23 @@
     <tbody>
       <tr>
         <th class="shaded-label">Passing %</th>
-        <td>36%</td>
+        <td>63%</td>
       </tr>
       <tr>
         <th class="shaded-label">Failing %</th>
-        <td>45%</td>
+        <td>25%</td>
       </tr>
       <tr>
         <th class="shaded-label">Start Time</th>
-        <td>Nov 24, 2023, 03:20 PM EST </td>
+        <td>Nov 24, 2023, 09:20 PM EST </td>
       </tr>
       <tr>
         <th class="shaded-label">End Time</th>
-        <td>Nov 24, 2023, 03:22 PM EST</td>
+        <td>Nov 24, 2023, 09:20 PM EST</td>
       </tr>
       <tr>
         <th class="shaded-label">Execution time</th>
-        <td>1 min 30 sec</td>
+        <td>0 min 6 sec</td>
       </tr>
     </tbody>
   </table>
@@ -92,85 +92,61 @@
           <tbody>
             
         <tr >
-          <td style="width: 45%; text-align: left;">[Billing Page Tests] Verify the billing methods</td>
-          <td style="width: 45%; text-align: center;" class="failed">AssertionError: Timed out retrying after 10ms: Expected to find content: 'Non Existent' but never did.
-    at Context.eval (webpack://cypress_ts/./cypress/e2e/Billing.cy.ts:5:51)</td>
-          <td style="width: 5%; text-align: center;"><a href="http://127.0.0.1:8080/cypress/videos/Billing.cy.ts.mp4" target="_blank">Video</a> <a href="http://127.0.0.1:8080/cypress/screenshots/Billing.cy.ts/Verify the billing methods -- after each hook (attempt 2).png" target="_blank">Screenshot</a></td>
-          <td style="width: 5%;">00 min 13 sec</td>
-        </tr>
-      
-        <tr >
-          <td style="width: 45%; text-align: left;">[Checkout tests] Checkout Happy Test 4</td>
+          <td style="width: 45%; text-align: left;">[Suite A] Test A D</td>
           <td style="width: 45%; text-align: center;" class="failed">AssertionError: expected true to be false
-    at Context.eval (webpack://cypress_ts/./cypress/e2e/Checkout.cy.ts:34:0)</td>
-          <td style="width: 5%; text-align: center;"><a href="http://127.0.0.1:8080/cypress/videos/Checkout.cy.ts.mp4" target="_blank">Video</a> <a href="http://127.0.0.1:8080/cypress/screenshots/Checkout.cy.ts/Checkout Happy Test 4 -- after each hook (attempt 2).png" target="_blank">Screenshot</a></td>
-          <td style="width: 5%;">00 min 03 sec</td>
+    at Context.eval (webpack://cypress_ts/./cypress/e2e/smoke/testA.cy.ts:16:0)</td>
+          <td style="width: 5%; text-align: center;"><a href="http://127.0.0.1:8800/cypress/videos/testA.cy.ts.mp4" target="_blank">Video</a> <a href="http://127.0.0.1:8800/cypress/screenshots/testA.cy.ts/Test A D -- after each hook (attempt 2).png" target="_blank">Screenshot</a></td>
+          <td style="width: 5%;">00 min 02 sec</td>
         </tr>
       
         <tr >
-          <td style="width: 45%; text-align: left;">[Landing Page Tests] Verify the landing page elements</td>
-          <td style="width: 45%; text-align: center;" class="failed">AssertionError: Timed out retrying after 10ms: Expected to find content: 'Non Existent' but never did.
-    at Context.eval (webpack://cypress_ts/./cypress/e2e/Landing.cy.ts:5:51)</td>
-          <td style="width: 5%; text-align: center;"><a href="http://127.0.0.1:8080/cypress/videos/Landing.cy.ts.mp4" target="_blank">Video</a> <a href="http://127.0.0.1:8080/cypress/screenshots/Landing.cy.ts/Verify the landing page elements -- after each hook (attempt 2).png" target="_blank">Screenshot</a></td>
-          <td style="width: 5%;">00 min 11 sec</td>
+          <td style="width: 45%; text-align: left;">[Suite C] Test C B</td>
+          <td style="width: 45%; text-align: center;" class="failed">AssertionError: expected true to be false
+    at Context.eval (webpack://cypress_ts/./cypress/e2e/smoke/testC.cy.ts:8:0)</td>
+          <td style="width: 5%; text-align: center;"><a href="http://127.0.0.1:8800/cypress/videos/testC.cy.ts.mp4" target="_blank">Video</a> <a href="http://127.0.0.1:8800/cypress/screenshots/testC.cy.ts/Test C B -- after each hook (attempt 2).png" target="_blank">Screenshot</a></td>
+          <td style="width: 5%;">00 min 02 sec</td>
         </tr>
       
         <tr >
-          <td style="width: 45%; text-align: left;">[Login Tests] Verify the login tests</td>
-          <td style="width: 45%; text-align: center;" class="failed">AssertionError: Timed out retrying after 10ms: Expected to find content: 'Non Existent' but never did.
-    at Context.eval (webpack://cypress_ts/./cypress/e2e/Login.cy.ts:8:51)</td>
-          <td style="width: 5%; text-align: center;"><a href="http://127.0.0.1:8080/cypress/videos/Login.cy.ts.mp4" target="_blank">Video</a> <a href="http://127.0.0.1:8080/cypress/screenshots/Login.cy.ts/Verify the login tests -- after each hook (attempt 2) (1).png" target="_blank">Screenshot</a></td>
-          <td style="width: 5%;">00 min 10 sec</td>
-        </tr>
-      
-        <tr >
-          <td style="width: 45%; text-align: left;">[Transaction Tests] Verify the transactions</td>
-          <td style="width: 45%; text-align: center;" class="failed">AssertionError: Timed out retrying after 10ms: Expected to find content: 'Non Existent' but never did.
-    at Context.eval (webpack://cypress_ts/./cypress/e2e/Transactions.cy.ts:5:51)</td>
-          <td style="width: 5%; text-align: center;"><a href="http://127.0.0.1:8080/cypress/videos/Transactions.cy.ts.mp4" target="_blank">Video</a> <a href="http://127.0.0.1:8080/cypress/screenshots/Transactions.cy.ts/Verify the transactions -- after each hook (attempt 2).png" target="_blank">Screenshot</a></td>
-          <td style="width: 5%;">00 min 12 sec</td>
-        </tr>
-      
-        <tr >
-          <td style="width: 45%; text-align: left;">[Checkout tests] Checkout Happy Test 1</td>
+          <td style="width: 45%; text-align: left;">[Suite A] Test A A</td>
           <td style="width: 45%; text-align: center;" class="passed">Pass</td>
-          <td style="width: 5%; text-align: center;"><a href="http://127.0.0.1:8080/cypress/videos/Checkout.cy.ts.mp4" target="_blank">Video</a> <a href="http://127.0.0.1:8080/cypress/screenshots/Checkout.cy.ts/Checkout Happy Test 1 -- after each hook.png" target="_blank">Screenshot</a></td>
-          <td style="width: 5%;">00 min 07 sec</td>
-        </tr>
-      
-        <tr >
-          <td style="width: 45%; text-align: left;">[Checkout tests] Checkout Happy Test 2</td>
-          <td style="width: 45%; text-align: center;" class="passed">Pass</td>
-          <td style="width: 5%; text-align: center;"><a href="http://127.0.0.1:8080/cypress/videos/Checkout.cy.ts.mp4" target="_blank">Video</a> <a href="http://127.0.0.1:8080/cypress/screenshots/Checkout.cy.ts/Checkout Happy Test 2 -- after each hook.png" target="_blank">Screenshot</a></td>
-          <td style="width: 5%;">00 min 07 sec</td>
-        </tr>
-      
-        <tr >
-          <td style="width: 45%; text-align: left;">[Checkout tests] Checkout Happy Test 3</td>
-          <td style="width: 45%; text-align: center;" class="passed">Pass</td>
-          <td style="width: 5%; text-align: center;"><a href="http://127.0.0.1:8080/cypress/videos/Checkout.cy.ts.mp4" target="_blank">Video</a> <a href="http://127.0.0.1:8080/cypress/screenshots/Checkout.cy.ts/Checkout Happy Test 3 -- after each hook.png" target="_blank">Screenshot</a></td>
-          <td style="width: 5%;">00 min 08 sec</td>
-        </tr>
-      
-        <tr >
-          <td style="width: 45%; text-align: left;">[Login Tests] UUID Test</td>
-          <td style="width: 45%; text-align: center;" class="passed">Pass</td>
-          <td style="width: 5%; text-align: center;"><a href="http://127.0.0.1:8080/cypress/videos/Login.cy.ts.mp4" target="_blank">Video</a> <a href="http://127.0.0.1:8080/cypress/screenshots/Login.cy.ts/UUID Test -- after each hook (1).png" target="_blank">Screenshot</a></td>
-          <td style="width: 5%;">00 min 03 sec</td>
-        </tr>
-      
-        <tr >
-          <td style="width: 45%; text-align: left;">[API Tests] Verify the HTTP calls</td>
-          <td style="width: 45%; text-align: center;" class="skipped">Skipped</td>
-          <td style="width: 5%; text-align: center;"><a href="http://127.0.0.1:8080/cypress/videos/API.cy.ts.mp4" target="_blank">Video</a></td>
+          <td style="width: 5%; text-align: center;"><a href="http://127.0.0.1:8800/cypress/videos/testA.cy.ts.mp4" target="_blank">Video</a> <a href="http://127.0.0.1:8800/cypress/screenshots/testA.cy.ts/Test A A -- after each hook.png" target="_blank">Screenshot</a></td>
           <td style="width: 5%;">00 min 01 sec</td>
         </tr>
       
         <tr >
-          <td style="width: 45%; text-align: left;">[Database Tests] Verify if the data is returned from the backend</td>
-          <td style="width: 45%; text-align: center;" class="skipped">Skipped</td>
-          <td style="width: 5%; text-align: center;"><a href="http://127.0.0.1:8080/cypress/videos/Database.cy.ts.mp4" target="_blank">Video</a></td>
+          <td style="width: 45%; text-align: left;">[Suite A] Test A B</td>
+          <td style="width: 45%; text-align: center;" class="passed">Pass</td>
+          <td style="width: 5%; text-align: center;"><a href="http://127.0.0.1:8800/cypress/videos/testA.cy.ts.mp4" target="_blank">Video</a> <a href="http://127.0.0.1:8800/cypress/screenshots/testA.cy.ts/Test A B -- after each hook.png" target="_blank">Screenshot</a></td>
           <td style="width: 5%;">00 min 01 sec</td>
+        </tr>
+      
+        <tr >
+          <td style="width: 45%; text-align: left;">[Suite A] Test A C</td>
+          <td style="width: 45%; text-align: center;" class="passed">Pass</td>
+          <td style="width: 5%; text-align: center;"><a href="http://127.0.0.1:8800/cypress/videos/testA.cy.ts.mp4" target="_blank">Video</a> <a href="http://127.0.0.1:8800/cypress/screenshots/testA.cy.ts/Test A C -- after each hook.png" target="_blank">Screenshot</a></td>
+          <td style="width: 5%;">00 min 01 sec</td>
+        </tr>
+      
+        <tr >
+          <td style="width: 45%; text-align: left;">[Suite C] Test C A</td>
+          <td style="width: 45%; text-align: center;" class="passed">Pass</td>
+          <td style="width: 5%; text-align: center;"><a href="http://127.0.0.1:8800/cypress/videos/testC.cy.ts.mp4" target="_blank">Video</a> <a href="http://127.0.0.1:8800/cypress/screenshots/testC.cy.ts/Test C A -- after each hook.png" target="_blank">Screenshot</a></td>
+          <td style="width: 5%;">00 min 01 sec</td>
+        </tr>
+      
+        <tr >
+          <td style="width: 45%; text-align: left;">[Suite C] Test C C</td>
+          <td style="width: 45%; text-align: center;" class="passed">Pass</td>
+          <td style="width: 5%; text-align: center;"><a href="http://127.0.0.1:8800/cypress/videos/testC.cy.ts.mp4" target="_blank">Video</a> <a href="http://127.0.0.1:8800/cypress/screenshots/testC.cy.ts/Test C C -- after each hook.png" target="_blank">Screenshot</a></td>
+          <td style="width: 5%;">00 min 01 sec</td>
+        </tr>
+      
+        <tr >
+          <td style="width: 45%; text-align: left;">[Suite C] Test C D</td>
+          <td style="width: 45%; text-align: center;" class="skipped">Skipped</td>
+          <td style="width: 5%; text-align: center;"><a href="http://127.0.0.1:8800/cypress/videos/testC.cy.ts.mp4" target="_blank">Video</a></td>
+          <td style="width: 5%;">00 min 00 sec</td>
         </tr>
       
           </tbody>
@@ -180,7 +156,7 @@
       <script>
         document.addEventListener('DOMContentLoaded', function () {
           // Call a function to draw the pie chart
-          drawPieChart(4, 5, 2);
+          drawPieChart(5, 2, 1);
         });
 
         function drawPieChart(pass, fail, skipped) {

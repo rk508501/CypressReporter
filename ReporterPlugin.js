@@ -269,18 +269,31 @@ function generateRows(runs) {
     }
   }
 
-  function convertToLocalUrl(filePath, port = 8080) {
+  function getServerPort() {
+    let port = 8080;
+    try {
+      const reporterConfig = JSON.parse(fs.readFileSync('reportconfig.json'));
+      if (reporterConfig.port) {
+        port = reporterConfig.port;
+      }
+    } catch (err) {
+      console.error('No reporterconfig.json file found, using default port 8080.');
+    }
+    return port
+  }
+
+  function convertToLocalUrl(filePath, port = null) {
     // Assuming the videos are served from the root of the server
-    const baseUrl = `http://127.0.0.1:${port}`;
+    const baseUrl = `http://127.0.0.1:${getServerPort() || 8080}`; // Use the provided port or default to 8080
 
     // Replace the local path with an empty string and replace any backslashes with forward slashes
     const relativePath = filePath.replace(/.*cypress/, '/cypress').replace(/\\/g, '/');
 
     // Combine the base URL and the relative path
     const url = `${baseUrl}${relativePath}`;
-
     return url;
   }
+
 
   function getErrorFileInfo(errorMessage) {
     const regex = /(?:at\s.+?\()(.*?\))(?=\s|$)/;
