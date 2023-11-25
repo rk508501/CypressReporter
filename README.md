@@ -11,6 +11,9 @@ npm install
 ```
 
 ## Usage
+As of now three things a user can configure i.e. title of the test report, logo appearing next to the test report title and port at which the report server will be hosted.
+A reportconfig.json sample can be found at https://github.com/rk508501/CypressReporter/blob/main/reportconfig.json
+
 Add the following to the cypress.config(js/ts) file
 ```python
 setupNodeEvents(on, config) {
@@ -20,12 +23,12 @@ setupNodeEvents(on, config) {
 
 Once all the tests are executed, a HTML file will be generated under TestReport folder (at the project root level)
 
-In order to view the report, launch a web server using the ReporterServer.js module. 
+In order to view the report, launch a web server using the ReporterServer.js module. The embedded screenshot/video links from the tests are blocked from opening by a browser hence a server is required for hosting these static files.
 
 ```python
 node ReporterServer.js
 ```
-The report can be viewed at http://127.0.0.1:8080
+The HTML report can be viewed at http://127.0.0.1:8080 (or the custom port specified via reportconfig.json)
 
 A sample report screenshot can be found here:
 
