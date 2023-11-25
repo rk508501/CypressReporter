@@ -32,7 +32,7 @@ The HTML report can be viewed at http://127.0.0.1:8080 (or the custom port speci
 
 A sample report screenshot can be found here:
 
-[Image of a sample report screenshot](https://github.com/rk508501/CypressReporter/blob/main/assets/Sample_Report.png)
+[Sample Report Screenshot](https://github.com/rk508501/CypressReporter/blob/main/assets/Sample_Report.png)
 
 
 ## Contributing
