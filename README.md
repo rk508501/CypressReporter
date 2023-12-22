@@ -40,6 +40,8 @@ A sample report screenshot can be found here:
 Pull requests are welcome. For major changes, please open an issue first.
 to discuss what you would like to change.
 
+Email at ruku508501@gmail.com
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
