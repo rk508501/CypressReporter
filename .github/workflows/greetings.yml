@@ -1,0 +1,16 @@
+name: Daily Greeting Workflow
+
+# Trigger the workflow on a schedule
+on:
+  schedule:
+    # Runs at 8:00 AM UTC every day
+    - cron: '0 8 * * *'
+
+# Define the job
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Print Greeting
+        run: echo "Good morning! It's $(date) now."
