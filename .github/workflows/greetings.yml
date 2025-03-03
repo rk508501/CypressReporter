@@ -2,8 +2,9 @@ name: Happy Weekend Greeting
 
 on:
   schedule:
-    - cron: '5 1 * * 1'  # Triggers at 1:05 AM UTC, which is 8:05 PM EST on Sunday
-
+    # Triggers at 1:05 AM UTC on Monday, which is 8:05 PM EST on Sunday
+    - cron: '5 1 * * 0'  # Change the day of the week to Sunday (0)
+    
 jobs:
   print-greeting:
     runs-on: ubuntu-latest
